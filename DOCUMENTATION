@@ -70,7 +70,7 @@ Metodi:
 	- constructor (default and subclasses)
 	- get and set
 	- void display(), stampa name e description
-	- void action, esegue l'azione prevista su quella casella
+	- void action, esegue l'azione prevista su quella casella (on the subclasses)
 
 	CLASSE MAPPA
 la classe mappa prende un oggetto mazzo e un oggetto personaggio per la gestione
