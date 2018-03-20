@@ -9,6 +9,7 @@ tramite un puntatore, si scorrerà la lista in avanti per pescare le carte;
 arrivato.
 le carte verranno "mischiate" nel mazzo col tipo di carte che ci sono nella classe 
 CARTE (ogni carta ha un numero prestabilito di copie)
+	
 	CLASSE CARTE
 40 carte totali nel mazzo
     - vuote 4
@@ -19,6 +20,7 @@ CARTE (ogni carta ha un numero prestabilito di copie)
     - come prima ma vai avanti 5
     - sposta un altro giocatore 5
     - torna all'inizio 1
+	
 	CLASSE PERSONAGGIO
 il personaggio presenta le seguenti variabili:
 	nome (max 3 lettere)
@@ -42,6 +44,34 @@ il menu presenta le seguenti voci
 		-credidts
 		-regole
 		-esci
+	
+	CLASSE CASELLA
+tipologie di casella:
+	- 1 start
+	- 2 bridge (ripete il movimento)
+	- 3 inn (femo tre turni)
+	- 4 prision (fermo 5 turni)
+	- 5 labirinth (torna alla casella n < end)
+	- 6 skull (torna a start)
+	- 7 end
+Attributi:
+Parametri delle caselle
+	- type ([1,7] inizializzato a 0 come casella non definita)
+	- name (string)
+	- description (string)
+Parametri per la struttura dati
+	- p (puntatore alla lista di trabocco della casella dove vengono salvati i personaggi
+	che risiedono correntemente sulla casella
+	- next (puntatore alla casella successiva)
+	- prec (puntatore alla casella precedente)
+	Le variabili puntatori vengono inizializzate a NULL ed assumono valori solo a runtime	
+	La lista di trabocco di end e prision può contenere solo un elemento
+Metodi:
+	- constructor (default and subclasses)
+	- get and set
+	- void display(), stampa name e description
+	- void action, esegue l'azione prevista su quella casella
+
 	CLASSE MAPPA
 la classe mappa prende un oggetto mazzo e un oggetto personaggio per la gestione
 degli eventi di gioco:
@@ -50,14 +80,4 @@ La mappa è generata casualmente e ha una dimensione che va da 63 a 90 caselle (
 già esposto precedentemente)
 il livello di difficoltà classico presenta il 30% di caselle evento, mentre la
 difficoltà avanzata avrà il 45% di CE.
-tipo di caselle:
-	START
-	BRIDGE ripete il movimento
-	INN    fermo 3 turni
-	PRISION fermo 5 turni
-	LABIRINTH torna alla casella n (valore gen casualmente < di END)
-	SKULL    torna a START
-	END
 la mappa viene gestita tramite una lista bidirezionale
-la casella ha un puntatore alla sua lista di trabocco (n giocatori a parte la prigione
-						       che ne puo contenere 1)
