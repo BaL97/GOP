@@ -80,4 +80,4 @@ La mappa è generata casualmente e ha una dimensione che va da 63 a 90 caselle (
 già esposto precedentemente)
 il livello di difficoltà classico presenta il 30% di caselle evento, mentre la
 difficoltà avanzata avrà il 45% di CE.
-la mappa viene gestita tramite una lista bidirezionale
+la mappa viene gestita tramite una lista bidirezionale (next, prec)
