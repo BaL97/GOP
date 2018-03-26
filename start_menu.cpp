@@ -3,6 +3,7 @@
 #include <string.h>
 #include <cstring>
 #include<ctime>
+#include <fstream>
 #include "start_menu.h"
 using namespace std;
 
@@ -88,6 +89,7 @@ char option::level() {							//Function that returns a character for the choice 
 }
 
 void option::credits() {						//Function that makes credits read on screen
+	open ("CREDITS.txt", ios::out)
 
 }
 

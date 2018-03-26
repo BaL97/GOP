@@ -3,6 +3,7 @@
 #include <string.h>
 #include <cstring>
 #include<ctime>
+#include <fstream>
 using namespace std;
 
 class menu {
