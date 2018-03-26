@@ -89,8 +89,18 @@ char option::level() {							//Function that returns a character for the choice 
 }
 
 void option::credits() {						//Function that makes credits read on screen
-	open ("CREDITS.txt", ios::out)
-
+	char z;
+	
+	ifstream credits_file; 
+	credits_file.open("CREDITS.txt", ios::in);			//CREDITS.txt open for read
+	
+	cin >> z;
+	if (!credits_file)
+		cout << "Ops ! Qualcosa è andato storto." << endl;	//If the file does not exist
+	if ((z == 'q') || (z == 'e') || (z == 'c') || (z == 'x') || (z == 's'))
+		credits_file.close();					//If the user types a character the file closes
+		
+	credits_file.clear();						//The error flags are reset
 }
 
 void option::rules() {							//Function that makes the rules read on screen
