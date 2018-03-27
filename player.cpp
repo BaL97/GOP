@@ -6,12 +6,29 @@
 #include "player.h"
 using namespace std;
 
-bool player::Blocco(int stop) {			//function to stop the player if the card or the box
-	if (stop == 0)				//has a value that is equal to 0 (ie, do not move)
-	return false;				//the function returns false
+char player::insert_name() {
+	cout << "Il tuo nome ti identifia nel gioco. Puo essere lungo max 3 caratteri."<<endl;
+	cout << "Inserisci il tuo nome: "<<endl;
+	for (int i=0; i<CONST ;i++) 
+		cin >> name[i]; 
+		
+	return name[CONST];			//Return the name
+	//warning: array index 3 is past the end of the array (which contains 3 elements) [-Warray-bounds]
 }
 
-int player::Dice() {				//function for throwing the dice
+int player::insert_age() {
+	cout << "Il giocatore più piccolo inizia."<<endl;
+	cout << "Inserisci la tua età:"<<endl;
+	cin >> age;
+	
+	return age;				//Return the age
+}
+
+int player::blocked() {
+	return stop;				//Return to the inside (the number of turns remaining locked)
+}
+
+int player::dice() {				//function for throwing the dice
 						//the dice are two, in value it is stored in a sum_dadi 
 	int dado1 = (rand() % 6) + 1;
 	int dado2 = (rand() % 6) + 1;
@@ -21,6 +38,6 @@ int player::Dice() {				//function for throwing the dice
 	
 }
 
-void player::Move() {
+void player::move() {
 	
 }

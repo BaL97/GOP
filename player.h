@@ -9,16 +9,19 @@ using namespace std;
 class player {
 
 	public :
-		player (char NomeGiocatore[CONST], int eta){strcpy (Name,NomeGiocatore); Age = eta ;}	
+		player (char NomeGiocatore[CONST], int eta){strcpy (name,NomeGiocatore); age = eta ;}	
 								//Constructor for new player 
+		char insert_name();				//Function to enter the name
+		int insert_age();				//Function to enter the age
+		int blocked();					//Function for the block
+		int dice();					//Function for rolling the dice
+		void move();					//Function for move player
+		
 		
 	protected :
-		char Name[CONST];				//Player name 3 chars
-		int Age;					//Player age
-
-		bool Blocco(int stop);				//Connection with cards and boxes to stop
-		int Dice();					//Function for rolling the dice
-		void Move();					//Function for move player	
+		char name[CONST];				//Player name 3 chars
+		int age;					//Player age
+		int stop;					//Connection with cards and boxes to stop	
 					
 };
 
