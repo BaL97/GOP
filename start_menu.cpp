@@ -104,7 +104,18 @@ void option::credits() {						//Function that makes credits read on screen
 }
 
 void option::rules() {							//Function that makes the rules read on screen
-
+	char z;
+	
+	ifstream rules_file; 
+	rules_file.open("RULES.txt", ios::in);				//RULES.txt open for read
+	
+	cin >> z;
+	if (!rules_file)
+		cout << "Ops ! Qualcosa è andato storto." << endl;	//If the file does not exist
+	if ((z == 'q') || (z == 'e') || (z == 'c') || (z == 'x') || (z == 's'))
+		rules_file.close();					//If the user types a character the file closes
+		
+	rules_file.clear();
 }
 
 bool option::exit() {							//Function that makes the user choose whether to exit the game

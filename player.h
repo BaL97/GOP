@@ -13,7 +13,7 @@ class player {
 								//Constructor for new player 
 		char insert_name();				//Function to enter the name
 		int insert_age();				//Function to enter the age
-		int blocked();					//Function for the block
+		int blocked(int n);				//Function for the block
 		int dice();					//Function for rolling the dice
 		void move();					//Function for move player
 		

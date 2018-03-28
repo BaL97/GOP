@@ -24,17 +24,21 @@ int player::insert_age() {
 	return age;				//Return the age
 }
 
-int player::blocked() {
+int player::blocked(int n) {
+	stop = n;
+	
 	return stop;				//Return to the inside (the number of turns remaining locked)
 }
 
-int player::dice() {				//function for throwing the dice
-						//the dice are two, in value it is stored in a sum_dadi 
+int player::dice() {				//Function for throwing the dice
+						//The dice are two, in value it is stored in a sum_dadi 
 	int dado1 = (rand() % 6) + 1;
 	int dado2 = (rand() % 6) + 1;
 	
-	int sum_dadi = dado1+dado2;		//to recall the value in case of equal movements
-	return (sum_dadi);			//return the sum
+	int sum_dadi = dado1+dado2;		//To recall the value in case of equal movements
+	cout << "Dado uno: " << dado1 << ". Dado due: " << dado2 << ". Ti muoverai di " << sum_dadi << " caselle." << endl;
+	
+	return (sum_dadi);			//Return the sum
 	
 }
 
