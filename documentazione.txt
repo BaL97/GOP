@@ -1,4 +1,4 @@
-	CLASSE MAZZO:
+Vim	CLASSE MAZZO:
 il mazzo ha 40 carte che vengono salvate all' interno di una pila per simulare il 
 mescolamento e il pescaggio.
 Scelte implementativa:
