@@ -44,52 +44,51 @@ Carta_Avanti::Carta_Avanti(){
     setDescription("avanti di 1");
     setId(1);
 }
-/*void Carta_Avanti::evento (){
-    P->move();
-}*/
+  void Carta_Avanti::evento (ptr_player p){
+    p->move();
+}
 Carta_Turno::Carta_Turno(){
     setName("Bloccato!");
     setDescription("ops, sei bloccato per un turno...");
     setId(2);
 }
-/*void Carta_Turno::evento(personaggio P){
-    P->blocked(1);
-}*/
+  void Carta_Turno::evento(ptr_player p){
+    p->blocked(1);
+}
 
 Carta_Tira_Avanti::Carta_Tira_Avanti(){
     setName("Tira Ancora!");
     setDescription("e vai avanti");
     setId(3);
 }
-/*void Carta_Tira_Avanti::evento(){
-    int n = P->dice();
+  void Carta_Tira_Avanti::evento(ptr_player p){
+    int n = p->dice();
     while (n>0){
-        P->move();
+        p->move();
         n-- ;
     }
-}*/
+}
 
 Carta_Tira_Indietro::Carta_Tira_Indietro(){
     setName("Tira Ancora, MA!");
     setDescription("Questa volta vai dietro!");
     setId(4);
 }
-/*void Carta_Tira_Indietro::evento(){
-    int n = P->dice();       //funzione ipotetica di lancio del dado
+  void Carta_Tira_Indietro::evento(ptr_player p){
+    int n = p->dice();       //funzione ipotetica di lancio del dado
     while (n>0){
-        P->move();
+        p->move();
         n-- ;
     }
-}*/
+}
 
 Carta_Start::Carta_Start(){
     setName("TANTO VA LA GATTA AL LARDO...");
     setDescription("(che) Torna al punto di partenza");
     setId(5);
 }
-/*Carta_Start::evento(){
-    p->position=Start;
-}*/
-
+//void Carta_Start::evento(ptr_player p) {
+//    p->
+//}
 
 

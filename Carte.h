@@ -10,6 +10,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <cstring>
+#include "player.h"
 using namespace std;
 
 class Carte{
@@ -25,8 +26,7 @@ public:
     void setName(string Name);
     void setDescription(string Description);
     void setId(int Id);
-    //void evento(personaggio p);
-    //void eventoDado(personaggio p, dado d);
+    void evento(ptr_player p);
     void messaggio();
 };
 
