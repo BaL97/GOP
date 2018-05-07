@@ -65,7 +65,7 @@ Carte Mazzo::Pesca(){
 
 void Mazzo::stampa(){
     int k=1;                            //funzione temporanea per il test!!!!DA ELIMINARE!!!
-    for (auto &i : CartaMazzoEasy) { cout << i->getName() << k << endl ; k++;}
+    for (auto &i : CartaMazzoEasy) { cout << i->getName() << " - "<< k <<" - " << i->getDescription() << endl ; k++;}
 }
 
 mazzetto::mazzetto(){
@@ -94,7 +94,7 @@ mazzetto::mazzetto(){
 
 void mazzetto::Stampetta() {
     int k=1;                            //funzione temporanea per il test!!!!DA ELIMINARE!!!
-    for (auto &i : CartaMazzoHard) { cout << i->getName() << k << endl ; k++;}
+    for (auto &i : CartaMazzoHard) { cout << i->getName() << " - "<< k <<" - " << i->getDescription() << endl ; k++;}
 }
 
 void mazzetto::Mischietta() {
