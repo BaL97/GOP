@@ -1,0 +1,62 @@
+Vim	CLASSE MAZZO:
+il mazzo ha 40 carte che vengono salvate all' interno di una pila per simulare il 
+mescolamento e il pescaggio.
+Scelte implementativa:
+la lista verrà generata da una funzione INIT();
+tramite un puntatore, si scorrerà la lista in avanti per pescare le carte;
+arrivato.
+le carte verranno "mischiate" nel mazzo col tipo di carte che ci sono nella classe 
+CARTE (ogni carta ha un numero prestabilito di copie)
+	CLASSE CARTE
+40 carte totali nel mazzo
+    - vuote 4
+    - avanza di una casella 10
+    - salta un turno 5
+    - torna indietro di uno 5
+    - ritira i dadi e arretra dei punti dati dal dado 5
+    - come prima ma vai avanti 5
+    - sposta un altro giocatore 5
+    - torna all'inizio 1
+	CLASSE PERSONAGGIO
+il personaggio presenta le seguenti variabili:
+	nome (max 3 lettere)
+	età
+	puntatore alla casella corrente
+	variabile blocco (carta 1, locanda 3, prigione 5)
+le funzioni saranno:
+	crea il giocatore (costruttore)
+	tira il dado (numero casuale da 1 a 6 ( x 2 ) 
+	spostamento
+	CLASSE MENU
+il menu presenta le seguenti voci
+	nuova partita
+	partita veloce (inserimento personaggi da parte dell'utente e simulazione della
+			partita da parte del Programma)
+	opzioni:
+		-suono (on off)
+		-lunghezza mappa (inserimento numero da 63 a 90 oppure generazione
+		 		  casuale gestita dalla classe mappa)
+		-livello difficoltà (classico = - imprevisti; avanzato = + caselle)
+		-credidts
+		-regole
+		-esci
+	CLASSE MAPPA
+la classe mappa prende un oggetto mazzo e un oggetto personaggio per la gestione
+degli eventi di gioco:
+struttura dati che determina la posizione delle varie tipologie di caselle.
+La mappa è generata casualmente e ha una dimensione che va da 63 a 90 caselle (come 
+già esposto precedentemente)
+il livello di difficoltà classico presenta il 30% di caselle evento, mentre la
+difficoltà avanzata avrà il 45% di CE.
+tipo di caselle:
+	START
+	BRIDGE ripete il movimento
+	INN    fermo 3 turni
+	PRISION fermo 5 turni
+	LABIRINTH torna alla casella n (valore gen casualmente < di END)
+	SKULL    torna a START
+	END
+la mappa viene gestita tramite una lista bidirezionale
+la casella ha un puntatore alla sua lista di trabocco (n giocatori a parte la prigione
+						       che ne puo contenere 1)
+
