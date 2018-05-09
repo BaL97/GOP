@@ -30,6 +30,7 @@ le funzioni saranno:
 	CLASSE MENU
 il menu presenta le seguenti voci
 	nuova partita
+	
 	partita veloce (inserimento personaggi da parte dell'utente e simulazione della
 			partita da parte del Programma)
 	opzioni:
