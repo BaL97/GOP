@@ -17,6 +17,8 @@ using namespace std;
 int main(){
 	Menu m;
 	cout <<"Benvenuto in GOP! (Gioco dell'Oca Pazza)" <<endl;
-      	m.choice(m.display());
+    // 	m.choice(m.display());
+    m = m.choice(m.display());
+    cout << m.getOption() << endl;
 
 }

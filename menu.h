@@ -4,11 +4,14 @@
  */
 
 class Menu{
-	public:
+protected:
+    int Option;
+public:
+        int getOption();
 		//display the menu options
 		char display();
 		//switch the choice of user
-		void choice(char x);
+		Menu choice(char x);
 		//setting options inside the menu
 		void ChoiceOptions();
 };

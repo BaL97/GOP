@@ -22,7 +22,7 @@ char Menu::display(){
 	return x;
 }
 
-void Menu::choice(char x){
+Menu Menu::choice(char x){
 	switch(x){
 		case 'n':
 			//this->NewGame();
@@ -31,7 +31,7 @@ void Menu::choice(char x){
 			//this->FastGame();
 			break;
 		case 'o':
-			//this->ChoiceOptions();
+			this->ChoiceOptions();
 			break;
 		//Exit the game
 		case 'q':
@@ -57,10 +57,15 @@ void Menu::choice(char x){
 			}
 
 	}
+    return (*this);
+}
+
+int Menu::getOption(){
+    return this->Option;
 }
 
 void Menu::ChoiceOptions(){
-
-cout << "prova" << endl;
-
+    this->Option = 1;
+    
+    
 }
