@@ -7,11 +7,13 @@
 #ifndef GOP_DEF
 	#define GOP_DEF
 	#include <iostream>
+    #include <cstring>
 #endif
 
 using namespace std;
 
 Menu::Menu(){
+    setX('5');
     setPlayer_n(2);
     setSound(true);
     setMapLenght(63);
@@ -19,6 +21,9 @@ Menu::Menu(){
 }
 
 
+void Menu::setX(char x){
+    this->x=x;
+}
 void Menu::setPlayer_n(int n){
     this->Player_n = n;
 }
@@ -34,7 +39,9 @@ void Menu::setMode(bool n){
 }
 
 
-
+char Menu::getX(){
+    return this->x;
+}
 int Menu::getPlayer_n(){
     return Player_n;
 }
@@ -56,50 +63,47 @@ void Menu::displayAll(){
 
 
 
-char Menu::display(){
-	char x;
+void Menu::display(){
 	cout <<"Menu" <<endl;
-	cout <<" Nuova partita		(n)" <<endl;
-	cout <<" Partita veloce		(v)"<<endl;
-	cout <<" Opzioni		(o)" <<endl;
-	cout <<endl <<"Esci dal gioco	(q)"<<endl;
-	cin >> x;
-	return x;
+	cout <<" Nuova partita		(1)" <<endl;
+	cout <<" Partita veloce		(2)"<<endl;
+	cout <<" Opzioni		(3)" <<endl;
+	cout <<endl <<"Esci dal gioco	(4)"<<endl;
 }
 
-void Menu::choice(char x){
-    char tmp=' ';
-	switch(x){
-		case 'n':
+void Menu::choice(){
+    char tmp = '2' ;
+	switch(this->x){
+		case '1':
 			//this->NewGame();
 			break;
-		case 'v':
+		case '2':
 			//this->FastGame();
-			break;
-		case 'o':
+            break;
+		case '3':
 			this->setOptions();
 			break;
 		//Exit the game
-		case 'q':
-			while ((tmp!='s')||(tmp!='n')){
-				cout <<"Sei sicuro di voler uscire da GOP?" <<endl <<"(s) Si" <<endl <<"(n) No"<<endl;
+		case '4':
+			while ((tmp!='0')&&(tmp!='1')){
+				cout <<"Sei sicuro di voler uscire da GOP?" <<endl <<"(1) Si" <<endl <<"(0) No"<<endl;
 				cin >> tmp;
 				switch(tmp){
-					case 's':
+					case '1':
 						cout <<"Grazie per aver Giocato a GOP, alla prossima" <<endl;
 						cout <<"Premere un tasto per continuare . . .";
 						getchar();getchar();
 						exit(1);
 						break;
-					case 'n':
+					case '0':
 						//clear
-						this->choice(this->display());
 						break;
 					default:
-						cout <<"Scelta non consentita, scegli (s) per Si, (n) per No" <<endl;
+						cout <<"Scelta non consentita, scegli (0) per Si, (1) per No" <<endl;
 						break;
 				}
 			}
+            break;
         default:
             cout << "Opzione non valida!" <<endl;
             break;
@@ -107,18 +111,18 @@ void Menu::choice(char x){
 }
 
 void Menu::setOptions(){
-    char c;
+    int c;
     while (true){
         cout << "OPZIONI" << endl << endl;
-        cout << "Suoni                  (s)"<<endl;
-        cout << "Lunghezza mappa        (m)"<<endl;
-        cout << "Difficoltà             (d)"<<endl;
-        cout << "Regole                 (r)"<<endl;
-        cout << "Credits                (c)"<<endl<<endl;
-        cout << "Menu Principale        (e)"<<endl<<endl;
+        cout << "Suoni                  (1)"<<endl;
+        cout << "Lunghezza mappa        (2)"<<endl;
+        cout << "Difficoltà             (3)"<<endl;
+        cout << "Regole                 (4)"<<endl;
+        cout << "Credits                (5)"<<endl<<endl;
+        cout << "Menu Principale        (0)"<<endl<<endl;
         cin >> c;
         switch (c) {
-            case 's':
+            case 1:
                 //casted from int to bool: if the value is 0 the sound will be deactivated, in all other cases the sound will be activated.
                 cout << "SUONI" << endl;
                 cout << "1) attiva i suoni" << endl << "0) disattiva suoni"<<endl;
@@ -130,7 +134,7 @@ void Menu::setOptions(){
                 else cout << "suoni disattivati" << endl;
                 break;
         
-            case 'm':
+            case 2:
                 cout << "Mappa" << endl;
                 cout << "impostare lunghezza mappa."<<endl;
                 cout << "ATTENZIONE! VALORE MINIMO IMPOSTABILE UGUALE A 63!"<<endl;
@@ -140,7 +144,7 @@ void Menu::setOptions(){
                 cout << "Lunghezza mappa impostata a: " << getMapLenght() << " caselle."<< endl;
                 break;
         
-            case 'd':
+            case 3:
                 //casted from int to bool: if the value is 0 the modality will be EASY, in all other cases it will be hard.
                 cout << "DIFFICOLTA'" << endl;
                 cout << "0) EASY " << endl << "1) HARD"<<endl;
@@ -152,22 +156,23 @@ void Menu::setOptions(){
                 else cout << "EASY MODE" << endl;
                 break;
         
-            case 'r':
+            case 4:
                 cout << "ECCO LE REGOLE DEL GIOCO: "<< endl;        //print the rules.txt file
                 break;
         
-            case 'c':
+            case 5:
                 cout << "ECCO GLI AUTORI: "<< endl;        //print the CREDITS.txt file
                 break;
         
-            case 'e':
+            case 0:
                 cout<<"ECCO LE OPZIONI ATTIVE AL MOMENTO:"<<endl;
                 this->displayAll();
-                this->choice(this->display());
+                return;
                 break;
         
             default:
-                cout << "ERRARE E' UMANO, PERSEVERARE ANCHE."<<endl;
+                cout << "ERRARE E' UMANO, PERSEVERARE ANCHE."<<endl <<"Premere un tasto per continuare . . . ";
+                getchar();getchar();
                 break;
             }
         }
