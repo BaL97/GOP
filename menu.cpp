@@ -58,3 +58,9 @@ void Menu::choice(char x){
 
 	}
 }
+
+void Menu::ChoiceOptions(){
+
+cout << "prova" << endl;
+
+}

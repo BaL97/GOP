@@ -9,4 +9,6 @@ class Menu{
 		char display();
 		//switch the choice of user
 		void choice(char x);
+		//setting options inside the menu
+		void ChoiceOptions();
 };
