@@ -31,13 +31,14 @@ public:
     bool getSound();
     int getMapLenght();
     bool getMode();
+    void displayAll();
     
      //display the menu options
      char display();
 	 
      //switch the choice of user
-     Menu choice(char x);
+     void choice(char x);
 	 
      //setting options inside the menu
-     void ChoiceOptions();
+     void setOptions();
 };
