@@ -17,6 +17,7 @@ using namespace std;
 int main(){
 	Menu m;
 	cout <<"Benvenuto in GOP! (Gioco dell'Oca Pazza)" <<endl;
-    m.choice(m.display());
-
+    //The menu will continues to show up until the user will choice to exit the game (q)
+    while(true)
+        m.choice(m.display());
 }

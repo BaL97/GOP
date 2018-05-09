@@ -68,6 +68,7 @@ char Menu::display(){
 }
 
 void Menu::choice(char x){
+    char tmp=' ';
 	switch(x){
 		case 'n':
 			//this->NewGame();
@@ -80,7 +81,6 @@ void Menu::choice(char x){
 			break;
 		//Exit the game
 		case 'q':
-			char tmp=' ';
 			while ((tmp!='s')||(tmp!='n')){
 				cout <<"Sei sicuro di voler uscire da GOP?" <<endl <<"(s) Si" <<endl <<"(n) No"<<endl;
 				cin >> tmp;
@@ -100,29 +100,31 @@ void Menu::choice(char x){
 						break;
 				}
 			}
-
+        default:
+            cout << "Opzione non valida!" <<endl;
+            break;
 	}
 }
 
 void Menu::setOptions(){
-    cout << "OPZIONI" << endl << endl;
-    cout << "Suoni                  (s)"<<endl;
-    cout << "Lunghezza mappa        (m)"<<endl;
-    cout << "Difficoltà             (d)"<<endl;
-    cout << "Regole                 (r)"<<endl;
-    cout << "Credits                (c)"<<endl<<endl;
-    cout << "Menu Principale        (e)"<<endl<<endl;
-    
     char c;
-    cin >> c;
     while (true){
+        cout << "OPZIONI" << endl << endl;
+        cout << "Suoni                  (s)"<<endl;
+        cout << "Lunghezza mappa        (m)"<<endl;
+        cout << "Difficoltà             (d)"<<endl;
+        cout << "Regole                 (r)"<<endl;
+        cout << "Credits                (c)"<<endl<<endl;
+        cout << "Menu Principale        (e)"<<endl<<endl;
+        cin >> c;
         switch (c) {
             case 's':
+                //casted from int to bool: if the value is 0 the sound will be deactivated, in all other cases the sound will be activated.
                 cout << "SUONI" << endl;
                 cout << "1) attiva i suoni" << endl << "0) disattiva suoni"<<endl;
-                bool b;
+                int b;
                 cin >> b;
-                setSound(b);
+                setSound((bool)b);
                 if (getSound())
                     cout << "suoni attivi" << endl;
                 else cout << "suoni disattivati" << endl;
@@ -139,11 +141,12 @@ void Menu::setOptions(){
                 break;
         
             case 'd':
+                //casted from int to bool: if the value is 0 the modality will be EASY, in all other cases it will be hard.
                 cout << "DIFFICOLTA'" << endl;
                 cout << "0) EASY " << endl << "1) HARD"<<endl;
-                bool c;
+                int c;
                 cin >> c;
-                setMode(c);
+                setMode((bool)c);
                 if (getMode())
                     cout << "HARDCORE MODE" << endl;
                 else cout << "EASY MODE" << endl;
