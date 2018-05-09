@@ -47,8 +47,10 @@ int Menu::getMapLenght(){
 bool Menu::getMode(){
     return Mode;
 }
-void displayAll(){
-    cout<< "MODALITA' = "<< getMode() << endl <<"LUNGHEZZA MAPPA = " << getMapLenght() << endl <<"SUONO = " << getSound() << endl <<"NUMERO GIOCATORI = " getPlayer_n() << endl;
+
+void Menu::displayAll(){
+   cout<< "MODALITA' = "<< getMode() << endl <<"LUNGHEZZA MAPPA = " << getMapLenght() << endl <<"SUONO = " <<getSound() << endl <<"NUMERO GIOCATORI = " <<  getPlayer_n() << endl;
+    
 }
 
 
@@ -100,7 +102,6 @@ void Menu::choice(char x){
 			}
 
 	}
-    return (*this);
 }
 
 void Menu::setOptions(){
@@ -130,19 +131,19 @@ void Menu::setOptions(){
             case 'm':
                 cout << "Mappa" << endl;
                 cout << "impostare lunghezza mappa."<<endl;
-                cout << "ATTENZIONE! VALORE MINIMO IMPOSTABILE UGUALE A 63!"
-                int b;
-                cin >> b;
-                setMapLenght(b);
+                cout << "ATTENZIONE! VALORE MINIMO IMPOSTABILE UGUALE A 63!"<<endl;
+                int a;
+                cin >> a;
+                setMapLenght(a);
                 cout << "Lunghezza mappa impostata a: " << getMapLenght() << " caselle."<< endl;
                 break;
         
             case 'd':
                 cout << "DIFFICOLTA'" << endl;
                 cout << "0) EASY " << endl << "1) HARD"<<endl;
-                bool b;
-                cin >> b;
-                setMode(b);
+                bool c;
+                cin >> c;
+                setMode(c);
                 if (getMode())
                     cout << "HARDCORE MODE" << endl;
                 else cout << "EASY MODE" << endl;

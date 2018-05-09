@@ -13,7 +13,7 @@ protected:
 public:
     
     /* Default Constructor: default configuration:
-     * Player_n=2;
+     * Player_n=2;                  will be setted in NewGame menu option
      * sound = true;
      * Map_l = 63;
      * Mode = false;
