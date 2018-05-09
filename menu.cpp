@@ -11,6 +11,45 @@
 
 using namespace std;
 
+Menu::Menu(){
+    setPlayer_n(2);
+    setSound(true);
+    setMapLenght(63);
+    setMode(false);
+}
+
+
+void Menu::setPlayer_n(int n){
+    this->Player_n = n;
+}
+void Menu::setSound(bool n){
+    this->Sound = n;
+}
+void Menu::setMapLenght(int n){
+    this->Map_l=n;
+}
+void Menu::setMode(bool n){
+    this->Mode=n;
+}
+
+
+
+int Menu::getPlayer_n(){
+    return Player_n;
+}
+bool Menu::getSound(){
+    return Sound;
+}
+int Menu::getMapLenght(){
+    return Map_l;
+}
+bool Menu::getMode(){
+    return Mode;
+}
+
+
+
+
 char Menu::display(){
 	char x;
 	cout <<"Menu" <<endl;
@@ -60,12 +99,5 @@ Menu Menu::choice(char x){
     return (*this);
 }
 
-int Menu::getOption(){
-    return this->Option;
-}
 
-void Menu::ChoiceOptions(){
-    this->Option = 1;
-    
-    
-}
+
