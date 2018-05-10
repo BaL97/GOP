@@ -19,23 +19,20 @@
 using namespace std;
 
 int main(){
-    int a;
+    std::string s;
+    int x;
 	Menu m;
 	cout <<"Benvenuto in GOP! (Gioco dell'Oca Pazza)" <<endl;
     //The menu will continues to show up until the user will choice to exit the game (q)
     
     while(true){
         m.display();
-        cin >> a;
-        while (!cin.good())
-        {
-            cin.clear();
-            cin.ignore(INT_MAX, '\n');
-            cout << "INSERIRE INPUT VALIDO!"<<endl;
-            m.display();
-            cin>>a;
-        }
-        m.setX(a);
+        //the input is made parsing a string to an integer so we can handle input errors
+        //not valid string (not numbers) will not be accepted
+        //string relatives to double/float values will take as integer (casting by truncation)
+        getline(cin,s);
+        x=atoi(s.c_str());
+        m.setX(x);
         m.choice();
     }
 }

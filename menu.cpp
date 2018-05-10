@@ -74,7 +74,8 @@ void Menu::display(){
 }
 
 void Menu::choice(){
-    int tmp = 2 ;
+    std::string tmp ="";
+    int i_tmp=3;
 	switch(this->x){
 		case 1:
 			//this->NewGame();
@@ -87,17 +88,18 @@ void Menu::choice(){
 			break;
 		//Exit the game
 		case 4:
-			while ((tmp!=0)&&(tmp!=1)){
-				cout <<"Sei sicuro di voler uscire da GOP?" <<endl <<"(1) Si" <<endl <<"(0) No"<<endl;
-				cin >> tmp;
-				switch(tmp){
+			while ((i_tmp!=1)&&(i_tmp!=2)){
+				cout <<"Sei sicuro di voler uscire da GOP?" <<endl <<"(1) Si" <<endl <<"(2) No"<<endl;
+				getline(cin,tmp);
+                i_tmp=atoi(tmp.c_str());
+				switch(i_tmp){
 					case 1:
 						cout <<"Grazie per aver Giocato a GOP, alla prossima" <<endl;
 						cout <<"Premere un tasto per continuare . . .";
-						getchar();getchar();
+						getchar();
 						exit(1);
 						break;
-					case 0:
+					case 2:
 						//clear
 						break;
 					default:
