@@ -24,8 +24,15 @@ int main(){
     
     while(true){
         m.display();
-        fflush(stdin);
         cin>>a;
+        while (!cin.good())
+        {
+            cin.clear();
+            cin.ignore(INT_MAX, '\n');
+            cout << "INSERIRE INPUT VALIDO!"<<endl;
+            m.display();
+            cin>>a;
+        }
         m.setX(a);
         m.choice();
     }
