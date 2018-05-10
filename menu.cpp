@@ -115,6 +115,7 @@ void Menu::choice(){
 }
 
 void Menu::setOptions(){
+    std:string s_c="";
     int c;
     while (true){
         cout << "OPZIONI" << endl << endl;
@@ -123,9 +124,11 @@ void Menu::setOptions(){
         cout << "Difficoltà             (3)"<<endl;
         cout << "Regole                 (4)"<<endl;
         cout << "Credits                (5)"<<endl<<endl;
-        cout << "Menu Principale        (0)"<<endl<<endl;
-        fflush(stdin);
-        cin >> c;
+        cout << "Menu Principale        (6)"<<endl<<endl;
+        
+        //input handled with cin, it hallows multiples input by spacing them with blanks, that can facilitates the option settings
+        cin >> s_c;
+        c=atoi(s_c.c_str());
         switch (c) {
             case 1:
                 //casted from int to bool: if the value is 0 the sound will be deactivated, in all other cases the sound will be activated.
@@ -170,7 +173,7 @@ void Menu::setOptions(){
                 
                 break;
         
-            case 0:
+            case 6:
                 cout<<"ECCO LE OPZIONI ATTIVE AL MOMENTO:"<<endl;
                 this->displayAll();
                 return;
