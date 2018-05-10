@@ -1,5 +1,5 @@
 /* Authors:	Davide Balestra: 0000789078
- * 		Andrea D'Arpa:	 0000803520
+ * 		    Andrea D'Arpa:	 0000803520
  * Main file of GOP Project, include the main menu and the access of Game's functions
  */
 #ifndef GOP_DEF
@@ -23,6 +23,7 @@ int main(){
     
     while(true){
         m.display();
+        fflush(stdin);
         cin>>a;
         m.setX(a);
         m.choice();

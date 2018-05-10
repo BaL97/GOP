@@ -1,4 +1,5 @@
-/*	Author: Davide Balestra 0000789078
+/*	Authors: Davide Balestra 0000789078
+ *           Andrea D'Arpa   0000803520
  *	Date: 09-05-2018
  *	Implementation of class menu
  */
@@ -8,6 +9,7 @@
 	#define GOP_DEF
 	#include <iostream>
     #include <cstring>
+    #include <fstream>
 #endif
 
 using namespace std;
@@ -120,6 +122,7 @@ void Menu::setOptions(){
         cout << "Regole                 (4)"<<endl;
         cout << "Credits                (5)"<<endl<<endl;
         cout << "Menu Principale        (0)"<<endl<<endl;
+        fflush(stdin);
         cin >> c;
         switch (c) {
             case 1:
@@ -162,6 +165,7 @@ void Menu::setOptions(){
         
             case 5:
                 cout << "ECCO GLI AUTORI: "<< endl;        //print the CREDITS.txt file
+                
                 break;
         
             case 0:
@@ -171,7 +175,7 @@ void Menu::setOptions(){
                 break;
         
             default:
-                cout << "ERRARE E' UMANO, PERSEVERARE ANCHE."<<endl <<"Premere un tasto per continuare . . . ";
+                cout << "ERRARE E' UMANO, PERSEVERARE ANCHE."<<endl;
                 getchar();getchar();
                 break;
             }
