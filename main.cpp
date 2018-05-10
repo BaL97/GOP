@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <cstring>
+#include <string>
 #include <ctime>
 #include <fstream>
 #include "menu.h"
@@ -16,7 +17,7 @@
 using namespace std;
 
 int main(){
-    char a;
+    int a;
 	Menu m;
 	cout <<"Benvenuto in GOP! (Gioco dell'Oca Pazza)" <<endl;
     //The menu will continues to show up until the user will choice to exit the game (q)

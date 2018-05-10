@@ -15,7 +15,7 @@
 using namespace std;
 
 Menu::Menu(){
-    setX('5');
+    setX(5);
     setPlayer_n(2);
     setSound(true);
     setMapLenght(63);
@@ -23,7 +23,7 @@ Menu::Menu(){
 }
 
 
-void Menu::setX(char x){
+void Menu::setX(int x){
     this->x=x;
 }
 void Menu::setPlayer_n(int n){
@@ -41,7 +41,7 @@ void Menu::setMode(bool n){
 }
 
 
-char Menu::getX(){
+int Menu::getX(){
     return this->x;
 }
 int Menu::getPlayer_n(){
@@ -74,30 +74,30 @@ void Menu::display(){
 }
 
 void Menu::choice(){
-    char tmp = '2' ;
+    int tmp = 2 ;
 	switch(this->x){
-		case '1':
+		case 1:
 			//this->NewGame();
 			break;
-		case '2':
+		case 2:
 			//this->FastGame();
             break;
-		case '3':
+		case 3:
 			this->setOptions();
 			break;
 		//Exit the game
-		case '4':
-			while ((tmp!='0')&&(tmp!='1')){
+		case 4:
+			while ((tmp!=0)&&(tmp!=1)){
 				cout <<"Sei sicuro di voler uscire da GOP?" <<endl <<"(1) Si" <<endl <<"(0) No"<<endl;
 				cin >> tmp;
 				switch(tmp){
-					case '1':
+					case 1:
 						cout <<"Grazie per aver Giocato a GOP, alla prossima" <<endl;
 						cout <<"Premere un tasto per continuare . . .";
 						getchar();getchar();
 						exit(1);
 						break;
-					case '0':
+					case 0:
 						//clear
 						break;
 					default:

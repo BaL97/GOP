@@ -2,10 +2,19 @@
  * 		    Andrea D'Arpa
  * Description: Header file of class Menu
  */
+#ifndef GOP_DEF
+#define GOP_DEF
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#endif
+
+
+using namespace std;
 
 class Menu{
 protected:
-    char x;
+    int x;
     int Player_n;       //Number of players (>1)
     int Map_l;          //MAP LENGHT (>=63)
     bool Sound;         //Active sound
@@ -23,14 +32,14 @@ public:
      Menu();
     
     //set methods
-    void setX(char x);
+    void setX(int x);
     void setPlayer_n(int n);
     void setSound(bool n);
     void setMapLenght(int n);
     void setMode(bool n);
     
     //get methods
-    char getX();
+    int getX();
     int getPlayer_n();
     bool getSound();
     int getMapLenght();
