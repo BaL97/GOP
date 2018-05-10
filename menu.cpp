@@ -180,7 +180,7 @@ void Menu::setOptions(){
                 break;
         
             default:
-                cout << "ERRARE E' UMANO, PERSEVERARE ANCHE."<<endl;
+                cout << "ERRARE E' UMANO, PERSEVERARE ANCHE."<<endl<<"premere un tasto per continuare. . . ";
                 getchar();getchar();
                 break;
             }
