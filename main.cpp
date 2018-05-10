@@ -9,9 +9,11 @@
 #include <stdio.h>
 #include <cstring>
 #include <string>
+#include <sstream>
 #include <ctime>
 #include <fstream>
 #include "menu.h"
+#define const INT_MAX 5;
 #endif
 
 using namespace std;
@@ -24,7 +26,7 @@ int main(){
     
     while(true){
         m.display();
-        cin>>a;
+        cin >> a;
         while (!cin.good())
         {
             cin.clear();
