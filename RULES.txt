@@ -1,0 +1,31 @@
+GIOCO DELL' OCA PAZZA:
+-NUMERO DI GIOCATORI: da 2 a 8
+Il gioco consiste nel procedere fino alla fine del tabellone la cui lunghezza può 
+variare da un minimo di 63 caselle a un massimo di 99 tramite un classico tiro di dadi. 
+Ci saranno vari bonus e malus durante il tragitto:
+ci saranno delle caselle con effetti particolari da tenere d'occhio.
+	START		è la casella di partenza... nulla vieta di tornarci
+	BRIDGE 		ripete il movimento del turno
+	INN    		fermo 3 turni
+	PRISION 	fermo 5 turni
+	LABIRINTH 	torna indietro di un numero di un numero di caselle casuale
+	SKULL    	torna alla casella START
+	END		HAI VINTO IL GIOCO!
+inoltre ci saranno delle caselle particolari dove sarà possibile pescare una carta 
+dal mazzo in dotazione, che come le caselle hanno degli effetti particolari.
+le carte in questione sono
+	VUOTA 
+    	VAI AVANTI	avanza di una casella 
+    	STOP		salta un turno
+    	BACK 		torna indietro di uno
+    	DICE-		ritira i dadi e arretra dei punti dati dal dado 
+    	DICE+		ritira i dadi e avanza  dei punti dati dal dado 
+    	GOP CARD	sposta un altro giocatore 
+    	TOTAL BACK	torna all'inizio 
+A seconda della modalità di gioco scelta dall'utente nelle apposite impostazioni di 
+cui parliamo qui di seguito, sarà detreminato il mazzo usato in partita.
+E' possibile modificare le opzioni di gioco rispettando le istruzioni che vengono fornite. 
+In caso di inserimento errato le impostazioni verranno lasciate come default.
+La sequenza di azione (ovvero il turno di gioco) sarà determinato dall'età dei giocatori (come nel gioco originale).
+
+
