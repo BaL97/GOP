@@ -136,8 +136,9 @@ void Menu::setOptions(){
                 int b;
                 cout << "SUONI" << endl;
                 cout << "1) attiva i suoni" << endl << "0) disattiva suoni"<<endl;
-                cin >> s_c;
-                b=atoi(s_c.c_str());
+                cout << "Se il valore inserito non sarà consono, sarà impostato il valore di DEFAULT."<<endl;
+				cin >> s_c;
+				b=atoi(s_c.c_str());
                 setSound((bool)b);
                 if (getSound())
                     cout << "suoni attivi" << endl;
@@ -150,8 +151,9 @@ void Menu::setOptions(){
                 cout << "Mappa" << endl;
                 cout << "impostare lunghezza mappa."<<endl;
                 cout << "ATTENZIONE! VALORE MINIMO IMPOSTABILE UGUALE A 63!"<<endl;
+				cout << "Se il valore inserito non sarà consono, sarà impostato il valore di DEFAULT."<<endl;
                 cin >> s_c;
-                atoi(s_c.c_str());
+				atoi(s_c.c_str());
                 setMapLenght(a);
                 cout << "Lunghezza mappa impostata a: " << getMapLenght() << " caselle."<< endl;
                 break;
@@ -162,6 +164,7 @@ void Menu::setOptions(){
                 s_c="";
                 cout << "DIFFICOLTA'" << endl;
                 cout << "0) EASY " << endl << "1) HARD"<<endl;
+				cout << "Se il valore inserito non sarà consono, sarà impostato il valore di DEFAULT."<<endl;
                 cin >> s_c;
                 c=atoi(s_c.c_str());
                 setMode((bool)c);
