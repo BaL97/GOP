@@ -5,12 +5,6 @@
  */
 
 #include "menu.h"
-#ifndef GOP_DEF
-	#define GOP_DEF
-	#include <iostream>
-    #include <cstring>
-    #include <fstream>
-#endif
 
 //using namespace std;
 
@@ -186,12 +180,11 @@ void Menu::setOptions(){
 	
         
             case 4:
-                cout << "ECCO LE REGOLE DEL GIOCO: "<< endl;        //print the rules.txt file
-                break;
+		this->parseFile("RULES.txt");
+		break;
         
             case 5:
-                cout << "ECCO GLI AUTORI: "<< endl;        //print the CREDITS.txt file
-                
+		this->parseFile("CREDITS.txt");
                 break;
         
             case 6:
@@ -206,5 +199,21 @@ void Menu::setOptions(){
                 break;
             }
         }
+}
+
+void Menu::parseFile(string name){
+	this->file_in.open(name);
+	if(!(this->file_in))
+		cout <<"C'è stato un errore nell'apertura del file, controlla che il file " << name <<" esista" <<endl;
+	else{
+		cout << "The file is Open . . ." <<endl <<name <<endl;
+		//parse the file
+		while(file_in >> this->parser)
+			cout << this->parser <<endl;
+		this->parser="";
+		this->file_in.close();
+	}
+	cout <<endl <<"Premere un tasto per continuare . . .";
+	getchar();getchar();	
 }
 

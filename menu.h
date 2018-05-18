@@ -4,22 +4,26 @@
  */
 #ifndef GOP_DEF
 #define GOP_DEF
+#include <string>
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <string>
 #endif
-
 
 using namespace std;
 
 class Menu{
 protected:
     int x;
-    int Player_n;       //Number of players (>1)
-    int Map_l;          //MAP LENGHT (>=63)
-    bool Sound;         //Active sound
-    bool Mode;          //difficulty parameter false = EASY || true = HARD
-    
+    int Player_n;       	//Number of players (>1)
+    int Map_l;          	//MAP LENGHT (>=63)
+    bool Sound;        	 	//Active sound
+    bool Mode;          	//difficulty parameter false = EASY || true = HARD
+    ifstream file_in;		//stream for input file
+    string parser="";	//string for parsing files	
+
+
 public:
     
     /* Default Constructor: default configuration:
@@ -54,4 +58,7 @@ public:
 	 
      //setting options inside the menu
      void setOptions();
+
+     //parsing input files method
+     void parseFile(string name);
 };
