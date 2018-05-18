@@ -136,14 +136,17 @@ void Menu::setOptions(){
                 int b;
                 cout << "SUONI" << endl;
                 cout << "1) attiva i suoni" << endl << "0) disattiva suoni"<<endl;
-                cout << "Se il valore inserito non sarà consono, sarà impostato il valore di DEFAULT."<<endl;
+                cout << "Se il valore inserito non sarà consono, rimarrà impostato il valore di DEFAULT."<<endl;
 				cin >> s_c;
+				if (s_c=="0"||s_c=="1"){
 				b=atoi(s_c.c_str());
                 setSound((bool)b);
                 if (getSound())
                     cout << "suoni attivi" << endl;
-                else cout << "suoni disattivati" << endl;
-                break;
+                else cout << "suoni disattivati" << endl<<endl;
+                break;}
+				 cout << "suoni attivi" << endl<<endl;
+				break;
         
             case 2:
                 int a;
@@ -151,12 +154,17 @@ void Menu::setOptions(){
                 cout << "Mappa" << endl;
                 cout << "impostare lunghezza mappa."<<endl;
                 cout << "ATTENZIONE! VALORE MINIMO IMPOSTABILE UGUALE A 63!"<<endl;
-				cout << "Se il valore inserito non sarà consono, sarà impostato il valore di DEFAULT."<<endl;
+				cout << "Se il valore inserito non sarà consono, rimarrà impostato il valore di DEFAULT."<<endl;
                 cin >> s_c;
-				atoi(s_c.c_str());
+				if (s_c>="63"&&s_c<"99") {
+				a=atoi(s_c.c_str());
                 setMapLenght(a);
-                cout << "Lunghezza mappa impostata a: " << getMapLenght() << " caselle."<< endl;
+                cout << "Lunghezza mappa impostata a: " << getMapLenght() << " caselle."<< endl<<endl;
                 break;
+				}
+				cout << "Lunghezza mappa di default: " << getMapLenght() << " caselle."<< endl<<endl;
+				break;
+
         
             case 3:
                 //casted from int to bool: if the value is 0 the modality will be EASY, in all other cases it will be hard.
@@ -164,14 +172,18 @@ void Menu::setOptions(){
                 s_c="";
                 cout << "DIFFICOLTA'" << endl;
                 cout << "0) EASY " << endl << "1) HARD"<<endl;
-				cout << "Se il valore inserito non sarà consono, sarà impostato il valore di DEFAULT."<<endl;
+				cout << "Se il valore inserito non sarà consono, rimarrà impostato il valore di DEFAULT."<<endl;
                 cin >> s_c;
-                c=atoi(s_c.c_str());
+                if (s_c=="0"||s_c=="1"){
+				c=atoi(s_c.c_str());
                 setMode((bool)c);
                 if (getMode())
-                    cout << "HARDCORE MODE" << endl;
-                else cout << "EASY MODE" << endl;
+                    cout << "HARDCORE MODE" << endl<<endl;
+                else cout << "EASY MODE" << endl<<endl;
                 break;
+			}
+			cout << "Difficoltà di default EASY MODE attiva."<<endl<<endl;
+	
         
             case 4:
                 cout << "ECCO LE REGOLE DEL GIOCO: "<< endl;        //print the rules.txt file
