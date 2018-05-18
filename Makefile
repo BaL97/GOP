@@ -1,17 +1,12 @@
-output: main.o menu.o
-	g++ main.o menu.o -o GOP
+output: main.cpp menu.o
+	g++ main.cpp menu.o -o GOP
+	@echo Main - Done
+	@echo Everything Done!
 
-main.o: main.cpp
-	g++ -c main.cpp
-	@echo Main - DONE!
+menu.o: menu.cpp menu.h 
+	g++ -c menu.cpp menu.h 
+	@echo Menu - Done
 
-menu.o: menu.cpp menu.h
-	g++ -c menu.cpp
-	@echo Menu - DONE!
-	
-	@echo 
-	@echo Everything DONE!
-	
 clean:
 	rm *.o GOP
 	@echo Removed All!
