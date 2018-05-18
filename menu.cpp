@@ -12,7 +12,7 @@
     #include <fstream>
 #endif
 
-using namespace std;
+//using namespace std;
 
 Menu::Menu(){
     setX(5);
@@ -115,7 +115,7 @@ void Menu::choice(){
 }
 
 void Menu::setOptions(){
-    std:string s_c="";
+    std::string s_c="";
     int c;
     while (true){
         cout << "OPZIONI" << endl << endl;
@@ -132,10 +132,12 @@ void Menu::setOptions(){
         switch (c) {
             case 1:
                 //casted from int to bool: if the value is 0 the sound will be deactivated, in all other cases the sound will be activated.
+                s_c="";
+                int b;
                 cout << "SUONI" << endl;
                 cout << "1) attiva i suoni" << endl << "0) disattiva suoni"<<endl;
-                int b;
-                cin >> b;
+                cin >> s_c;
+                b=atoi(s_c.c_str());
                 setSound((bool)b);
                 if (getSound())
                     cout << "suoni attivi" << endl;
@@ -143,21 +145,25 @@ void Menu::setOptions(){
                 break;
         
             case 2:
+                int a;
+                s_c="";
                 cout << "Mappa" << endl;
                 cout << "impostare lunghezza mappa."<<endl;
                 cout << "ATTENZIONE! VALORE MINIMO IMPOSTABILE UGUALE A 63!"<<endl;
-                int a;
-                cin >> a;
+                cin >> s_c;
+                atoi(s_c.c_str());
                 setMapLenght(a);
                 cout << "Lunghezza mappa impostata a: " << getMapLenght() << " caselle."<< endl;
                 break;
         
             case 3:
                 //casted from int to bool: if the value is 0 the modality will be EASY, in all other cases it will be hard.
+                int c;
+                s_c="";
                 cout << "DIFFICOLTA'" << endl;
                 cout << "0) EASY " << endl << "1) HARD"<<endl;
-                int c;
-                cin >> c;
+                cin >> s_c;
+                c=atoi(s_c.c_str());
                 setMode((bool)c);
                 if (getMode())
                     cout << "HARDCORE MODE" << endl;
