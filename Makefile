@@ -1,16 +1,17 @@
 output: main.o menu.o
-	g++ -std=c++0x -Wall main.o menu.o -o GOP
+	g++ main.o menu.o -o GOP
 
 main.o: main.cpp
 	g++ -c main.cpp
-	@echo COMPILATO CON SUCCESSO
+	@echo Main - DONE!
 
 menu.o: menu.cpp menu.h
 	g++ -c menu.cpp
-	@echo COMPILATO CON SUCCESSO
+	@echo Menu - DONE!
 	
 	@echo 
-	@echo TUTTI I FILE SONO STATI COMPILATI CON SUCCESSO
+	@echo Everything DONE!
 	
 clean:
 	rm *.o GOP
+	@echo Removed All!
