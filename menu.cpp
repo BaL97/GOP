@@ -16,6 +16,13 @@ Menu::Menu(){
     setMode(false);
 }
 
+ Menu::Menu( int pn, int m, bool s, bool mo){
+     setX(5);
+     setPlayer_n(pn);
+     setSound(s);
+     setMapLenght(m);
+     setMode(mo);
+ }
 
 void Menu::setX(int x){
     this->x=x;

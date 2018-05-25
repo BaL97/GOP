@@ -33,6 +33,7 @@ public:
      * Mode = false;
      */
      Menu();
+	 Menu(int pn, int m, bool s, bool mo);
     
     //set methods
     void setX(int x);
