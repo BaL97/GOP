@@ -52,7 +52,9 @@ bool Menu::getMode(){
 }
 
 void Menu::displayAll(){
-   cout<< "MODALITA' = "<< getMode() << endl <<"LUNGHEZZA MAPPA = " << getMapLenght() << endl <<"SUONO = " <<getSound() << endl <<"NUMERO GIOCATORI = " <<  getPlayer_n() << endl;
+   cout<< "MODALITA' = "<< getMode() << endl <<"LUNGHEZZA MAPPA = " << getMapLenght() << endl <<"SUONO = " <<getSound() << endl <<"NUMERO GIOCATORI = " <<  getPlayer_n() << endl<<"premere un tasto per continuare. . . ";
+   getchar();getchar();
+   system("clear");
     
 }
 
@@ -60,6 +62,7 @@ void Menu::displayAll(){
 
 
 void Menu::display(){
+	system("clear");
 	cout <<"Menu" <<endl;
 	cout <<" Nuova partita		(1)" <<endl;
 	cout <<" Partita veloce		(2)"<<endl;
@@ -78,6 +81,7 @@ void Menu::choice(){
 			//this->FastGame();
             break;
 		case 3:
+			system("clear");
 			this->setOptions();
 			break;
 		//Exit the game
@@ -88,13 +92,14 @@ void Menu::choice(){
                 i_tmp=atoi(tmp.c_str());
 				switch(i_tmp){
 					case 1:
+						system("clear");
 						cout <<"Grazie per aver Giocato a GOP, alla prossima" <<endl;
 						cout <<"Premere un tasto per continuare . . .";
 						getchar();
 						exit(1);
 						break;
 					case 2:
-						//clear
+						system("clear");
 						break;
 					default:
 						cout <<"Scelta non consentita, scegli (0) per Si, (1) per No" <<endl;
@@ -103,7 +108,9 @@ void Menu::choice(){
 			}
             break;
         default:
-            cout << "Opzione non valida!" <<endl;
+            cout << "Opzione non valida!" <<endl<<"premere un tasto per continuare. . . ";
+			getchar();
+			system("clear");
             break;
 	}
 }
@@ -126,7 +133,8 @@ void Menu::setOptions(){
         switch (c) {
             case 1:
                 //casted from int to bool: if the value is 0 the sound will be deactivated, in all other cases the sound will be activated.
-                s_c="";
+                system("clear");
+		s_c="";
                 int b;
                 cout << "SUONI" << endl;
                 cout << "1) attiva i suoni" << endl << "0) disattiva suoni"<<endl;
@@ -136,13 +144,20 @@ void Menu::setOptions(){
 				b=atoi(s_c.c_str());
                 setSound((bool)b);
                 if (getSound())
-                    cout << "suoni attivi" << endl;
-                else cout << "suoni disattivati" << endl<<endl;
-                break;}
-				 cout << "suoni attivi" << endl<<endl;
-				break;
+                	cout << "suoni attivi" << endl<<"premere un tasto per continuare. . . ";
+                else 
+			cout << "suoni disattivati" << endl<<"premere un tasto per continuare. . . "<<endl;
+                getchar();getchar();
+		system("clear");
+		break;
+		}
+		cout << "suoni attivi" << endl<<"premere un tasto per continuare. . . "<<endl;
+		getchar();getchar();
+		system("clear");
+		break;
         
             case 2:
+		system("clear");
                 int a;
                 s_c="";
                 cout << "Mappa" << endl;
@@ -153,10 +168,14 @@ void Menu::setOptions(){
 				if (s_c>="63"&&s_c<"99") {
 				a=atoi(s_c.c_str());
                 setMapLenght(a);
-                cout << "Lunghezza mappa impostata a: " << getMapLenght() << " caselle."<< endl<<endl;
-                break;
+                cout << "Lunghezza mappa impostata a: " << getMapLenght() << " caselle."<< endl<<"premere un tasto per continuare. . . "<<endl;
+                getchar();getchar();
+		system("clear");
+		break;
 				}
-				cout << "Lunghezza mappa di default: " << getMapLenght() << " caselle."<< endl<<endl;
+				cout << "Lunghezza mappa di default: " << getMapLenght() << " caselle."<< endl<<"premere un tasto per continuare. . . "<<endl;
+				getchar();getchar();
+				system("clear");
 				break;
 
         
@@ -164,6 +183,7 @@ void Menu::setOptions(){
                 //casted from int to bool: if the value is 0 the modality will be EASY, in all other cases it will be hard.
                 int c;
                 s_c="";
+		system("clear");
                 cout << "DIFFICOLTA'" << endl;
                 cout << "0) EASY " << endl << "1) HARD"<<endl;
 				cout << "Se il valore inserito non sarà consono, rimarrà impostato il valore di DEFAULT."<<endl;
@@ -172,30 +192,40 @@ void Menu::setOptions(){
 				c=atoi(s_c.c_str());
                 setMode((bool)c);
                 if (getMode())
-                    cout << "HARDCORE MODE" << endl<<endl;
-                else cout << "EASY MODE" << endl<<endl;
-                break;
+                    cout << "HARDCORE MODE" << endl<<"premere un tasto per continuare. . . "<<endl;
+                else cout << "EASY MODE" << endl<<"premere un tasto per continuare. . . "<<endl;
+        getchar();getchar();
+		system("clear");
+		break;
 			}
-			cout << "Difficoltà di default EASY MODE attiva."<<endl<<endl;
-	
+			cout << "Difficoltà di default EASY MODE attiva."<<endl<<"premere un tasto per continuare. . . "<<endl;
+			getchar();getchar();
+			system("clear");
+			break;
         
             case 4:
+		system("clear");
 		this->parseFile("RULES.txt");
+		system("clear");
 		break;
         
             case 5:
-		this->parseFile("CREDITS.txt");
-                break;
+		system("clear");
+		this->parseFile("AUTHORS.txt");
+		system("clear");
+		break;
         
             case 6:
+		system("clear");
                 cout<<"ECCO LE OPZIONI ATTIVE AL MOMENTO:"<<endl;
                 this->displayAll();
                 return;
-                break;
+		break;
         
             default:
                 cout << "ERRARE E' UMANO, PERSEVERARE ANCHE."<<endl<<"premere un tasto per continuare. . . ";
-                getchar();getchar();
+		getchar();getchar();
+		system("clear");
                 break;
             }
         }
@@ -204,13 +234,14 @@ void Menu::setOptions(){
 void Menu::parseFile(string name){
 	this->file_in.open(name);
 	if(!(this->file_in))
-		cout <<"C'è stato un errore nell'apertura del file, controlla che il file " << name <<" esista" <<endl;
+		cout <<"C'è stato un errore nell'apertura del file, controlla che il file " << name <<" esista" <<endl ;
 	else{
-		cout << "The file is Open . . ." <<endl <<name <<endl;
+		cout << "The file is Open . . ." <<endl <<name <<endl <<endl;
 		//parse the file
-		while(file_in >> this->parser)
-			cout << this->parser <<endl;
-		this->parser="";
+		while(!this->file_in.eof()){
+			this->file_in.get(parser);
+			cout << this->parser;}
+		//this->parser='\';
 		this->file_in.close();
 	}
 	cout <<endl <<"Premere un tasto per continuare . . .";

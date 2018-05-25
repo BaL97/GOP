@@ -21,8 +21,7 @@ protected:
     bool Sound;        	 	//Active sound
     bool Mode;          	//difficulty parameter false = EASY || true = HARD
     ifstream file_in;		//stream for input file
-    string parser="";	//string for parsing files	
-
+    char parser;		//string for parsing files
 
 public:
     
