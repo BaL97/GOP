@@ -82,11 +82,10 @@ void Menu::choice(){
     int i_tmp=3;
 	switch(this->x){
 		case 1:
-			//this->NewGame();
 			break;
 		case 2:
 			//this->FastGame();
-            break;
+            		break;
 		case 3:
 			system("clear");
 			this->setOptions();

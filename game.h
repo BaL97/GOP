@@ -11,7 +11,8 @@ using namespace std;
 
 class Game:public Menu{
 protected:
-	//i parametri di numero giocatori, suono, mappa e modalità sono ereditati dalla classe madre menu
+	//i parametri di numero giocatori sono ereditati dalla classe madre Menu
+	
 	/* I PARAMETRI QUI DEFINITI SONO ANCORA DA IMPLEMENTARE!
 			player (la classe deve contenere un puntatore al primo el della lista. Inizializzato a NULL prima di entrare in NewGame(). )
 			mazzo  (puntatore alla prima carta del mazzo)
@@ -28,5 +29,6 @@ public:
 //setter
 
 //getter
-	//da implementare set e get degli oggetti da implementare
+//da implementare set e get degli oggetti da implementare
+
 };
