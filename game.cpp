@@ -13,7 +13,7 @@
 		
 		//i puntatori degli oggetti da impementare saranno inizializzati a Null
 	}
-	Game::Game(int p, int m, bool mo, bool s):Menu(p, m, mo, s){		//costruttore con parametri rispettivamente: giocatori, mappa, modalità e  suono.
+	Game::Game(int p, bool mo, bool s):Menu(p, mo, s){		//costruttore con parametri rispettivamente: giocatori, mappa, modalità e  suono.
 		//i parametri ereditati verranno inizializzati dal costruttore di menu
 	
 		//i puntatori degli oggetti da impementare saranno inizializzati a Null

@@ -12,15 +12,13 @@ Menu::Menu(){
     setX(5);
     setPlayer_n(2);
     setSound(true);
-    setMapLenght(63);
     setMode(false);
 }
 
- Menu::Menu( int pn, int m, bool s, bool mo){
+ Menu::Menu(int pn, bool s, bool mo){
      setX(5);
      setPlayer_n(pn);
      setSound(s);
-     setMapLenght(m);
      setMode(mo);
  }
 
@@ -32,10 +30,6 @@ void Menu::setPlayer_n(int n){
 }
 void Menu::setSound(bool n){
     this->Sound = n;
-}
-void Menu::setMapLenght(int n){
-    if(n<63) n=63;          //if the user set a unapceted value the lenght will be setted to a default value of 63 cells
-    this->Map_l=n;
 }
 void Menu::setMode(bool n){
     this->Mode=n;
@@ -51,15 +45,12 @@ int Menu::getPlayer_n(){
 bool Menu::getSound(){
     return Sound;
 }
-int Menu::getMapLenght(){
-    return Map_l;
-}
 bool Menu::getMode(){
     return Mode;
 }
 
 void Menu::displayAll(){
-   cout<< "MODALITA' = "<< getMode() << endl <<"LUNGHEZZA MAPPA = " << getMapLenght() << endl <<"SUONO = " <<getSound() << endl <<"NUMERO GIOCATORI = " <<  getPlayer_n() << endl<<"premere un tasto per continuare. . . ";
+   cout<< "MODALITA' = "<< getMode() << endl <<"SUONO = " <<getSound() << endl <<"NUMERO GIOCATORI = " <<  getPlayer_n() << endl<<"premere un tasto per continuare. . . ";
    getchar();getchar();
    system("clear");
     
@@ -72,9 +63,8 @@ void Menu::display(){
 	system("clear");
 	cout <<"Menu" <<endl;
 	cout <<" Nuova partita		(1)" <<endl;
-	cout <<" Partita veloce		(2)"<<endl;
-	cout <<" Opzioni		(3)" <<endl;
-	cout <<endl <<"Esci dal gioco	(4)"<<endl;
+	cout <<" Opzioni		(2)" <<endl;
+	cout <<endl <<"Esci dal gioco	(3)"<<endl;
 }
 
 void Menu::choice(){
@@ -82,16 +72,14 @@ void Menu::choice(){
     int i_tmp=3;
 	switch(this->x){
 		case 1:
-			break;
-		case 2:
-			//this->FastGame();
+			//New Game
             		break;
-		case 3:
+		case 2:
 			system("clear");
 			this->setOptions();
 			break;
 		//Exit the game
-		case 4:
+		case 3:
 			while ((i_tmp!=1)&&(i_tmp!=2)){
 				cout <<"Sei sicuro di voler uscire da GOP?" <<endl <<"(1) Si" <<endl <<"(2) No"<<endl;
 				getline(cin,tmp);
@@ -127,11 +115,10 @@ void Menu::setOptions(){
     while (true){
         cout << "OPZIONI" << endl << endl;
         cout << "Suoni                  (1)"<<endl;
-        cout << "Lunghezza mappa        (2)"<<endl;
-        cout << "Difficoltà             (3)"<<endl;
-        cout << "Regole                 (4)"<<endl;
-        cout << "Credits                (5)"<<endl<<endl;
-        cout << "Menu Principale        (6)"<<endl<<endl;
+        cout << "Difficoltà             (2)"<<endl;
+        cout << "Regole                 (3)"<<endl;
+        cout << "Credits                (4)"<<endl<<endl;
+        cout << "Menu Principale        (5)"<<endl<<endl;
         
         //input handled with cin, it hallows multiples input by spacing them with blanks, that can facilitates the option settings
         cin >> s_c;
@@ -163,29 +150,6 @@ void Menu::setOptions(){
 		break;
         
             case 2:
-		system("clear");
-                int a;
-                s_c="";
-                cout << "Mappa" << endl;
-                cout << "impostare lunghezza mappa."<<endl;
-                cout << "ATTENZIONE! VALORE MINIMO IMPOSTABILE UGUALE A 63!"<<endl;
-				cout << "Se il valore inserito non sarà consono, rimarrà impostato il valore di DEFAULT."<<endl;
-                cin >> s_c;
-				if (s_c>="63"&&s_c<"99") {
-				a=atoi(s_c.c_str());
-                setMapLenght(a);
-                cout << "Lunghezza mappa impostata a: " << getMapLenght() << " caselle."<< endl<<"premere un tasto per continuare. . . "<<endl;
-                getchar();getchar();
-		system("clear");
-		break;
-				}
-				cout << "Lunghezza mappa di default: " << getMapLenght() << " caselle."<< endl<<"premere un tasto per continuare. . . "<<endl;
-				getchar();getchar();
-				system("clear");
-				break;
-
-        
-            case 3:
                 //casted from int to bool: if the value is 0 the modality will be EASY, in all other cases it will be hard.
                 int c;
                 s_c="";
@@ -209,19 +173,19 @@ void Menu::setOptions(){
 			system("clear");
 			break;
         
-            case 4:
+            case 3:
 		system("clear");
 		this->parseFile("RULES.txt");
 		system("clear");
 		break;
         
-            case 5:
+            case 4:
 		system("clear");
 		this->parseFile("AUTHORS.txt");
 		system("clear");
 		break;
         
-            case 6:
+            case 5:
 		system("clear");
                 cout<<"ECCO LE OPZIONI ATTIVE AL MOMENTO:"<<endl;
                 this->displayAll();
