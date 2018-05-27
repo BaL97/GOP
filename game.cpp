@@ -15,7 +15,8 @@
 	}
 	Game::Game(int p, bool mo, bool s):Menu(p, mo, s){		//costruttore con parametri rispettivamente: giocatori, mappa, modalità e  suono.
 		//i parametri ereditati verranno inizializzati dal costruttore di menu
-	
+		this->mazzo = new Mazzo();
+		this->mazzo->Mischia();
 		//i puntatori degli oggetti da impementare saranno inizializzati a Null
 	}
 //setter

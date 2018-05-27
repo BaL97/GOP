@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <cstring>
-#include "player.h"
+
 using namespace std;
 
 class Carte{

@@ -6,6 +6,7 @@
 */
 
 #include "menu.h"
+#include "Mazzo.h"
 
 using namespace std;
 
@@ -13,7 +14,7 @@ class Game:public Menu{
 protected:
 	//i parametri di numero giocatori sono ereditati dalla classe madre Menu
 	
-	Mazzo m=NULL;
+	
 	/* I PARAMETRI QUI DEFINITI SONO ANCORA DA IMPLEMENTARE!
 			player (la classe deve contenere un puntatore al primo el della lista. Inizializzato a NULL prima di entrare in NewGame(). )
 			mazzo  (puntatore alla prima carta del mazzo)
@@ -22,6 +23,8 @@ protected:
 	*/
 
 public:
+//Mazzo
+	Mazzo *mazzo;
 //constructors:
 	Game();								//costruttore di default
 	Game(int p, bool mo, bool s);		//costruttore con parametri rispettivamente: giocatori, mappa, modalità e  suono.
