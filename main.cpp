@@ -41,13 +41,18 @@ int main(){
 	
 	//If the user has choice New Game
 	if(m.getX()==1){
+		system("clear");
 		//the static attributes are setted by the user or default
 		//Now, creating the data structures for the game
-		//Players
-		//Map
-		g = new Game(m.getPlayer_n(),m.getMode() ,m.getSound());
-		g->displayPlayer();
-		getchar();getchar();
+		cout <<"Numero giocatori " <<endl <<"in caso di inserimento errato, rimarrà il numero di giocatori di default: 2"<<endl <<"Insert Here: " ;
+		getline(cin,s);
+		x=atoi(s.c_str());
+		cout <<"La partita e' stata avviata, buon divertimento!" <<endl <<"Premere un tasto per continuare . . .";
+		getchar();
+		system("clear");
+		g = new Game(x,m.getMode() ,m.getSound());
+		g->displayPlayers();
+		getchar();
 
 	}
 

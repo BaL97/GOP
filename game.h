@@ -34,5 +34,6 @@ public:
 	
 	//Method that creates a list of player (knowing player's number)
 	void createPlayers();
-	void displayPlayer();
+	Player* sortInsert(Player *p);
+	void displayPlayers();
 };

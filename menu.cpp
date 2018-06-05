@@ -17,7 +17,10 @@ Menu::Menu(){
 
  Menu::Menu(int pn, bool s, bool mo){
      setX(5);
-     setPlayer_n(pn);
+     if(pn>=2) 
+	setPlayer_n(pn);
+     else
+	setPlayer_n(2);
      setSound(s);
      setMode(mo);
  }
