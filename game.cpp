@@ -16,11 +16,14 @@
 	Game::Game(int p, bool mo, bool s):Menu(p, mo, s){		//costruttore con parametri rispettivamente: giocatori, mappa, modalità e  suono.
 		//i parametri ereditati verranno inizializzati dal costruttore di menu
 		
+		//Create the map Now
+		this->map=new Map(this->getMode());
+
 		//Now create Mazzo -> OK!
 		this->mazzo = new Mazzo();
 		this->mazzo->Mischia();
 		
-		//Now create Players List ->
+		//Now create Players List -> OK
 		this->player=new Player(); //create the sentinel
 		createPlayers(); //now init the players list
 

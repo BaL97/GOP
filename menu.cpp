@@ -15,7 +15,7 @@ Menu::Menu(){
     setMode(false);
 }
 
- Menu::Menu(int pn, bool s, bool mo){
+ Menu::Menu(int pn, bool mo, bool s){
      setX(5);
      if(pn>=2) 
 	setPlayer_n(pn);

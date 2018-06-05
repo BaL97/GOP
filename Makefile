@@ -1,10 +1,18 @@
-output: main.cpp menu.o game.o Carte.o Mazzo.o player.o
-	g++ main.cpp menu.o game.o Carte.o Mazzo.o player.o -o GOP
+output: main.cpp menu.o game.o Carte.o Mazzo.o player.o box.o map.o
+	g++ main.cpp menu.o game.o Carte.o Mazzo.o player.o box.o map.o -o GOP
 	@echo Main - Done
 	@echo Everything Done!
 
-game.o: game.cpp game.h menu.h Mazzo.h player.h
-	g++ -c game.cpp game.h menu.h Mazzo.h player.h
+box.o: box.cpp box.h
+	g++ -c box.cpp box.h
+	@echo Box - done
+
+map.o: map.cpp map.h box.h
+	g++ -c map.cpp map.h box.h
+	@echo Map - done
+
+game.o: game.cpp game.h menu.h Mazzo.h player.h map.h
+	g++ -c game.cpp game.h menu.h Mazzo.h player.h map.h
 	@echo GAME - Done
 
 Mazzo.o: Mazzo.cpp Mazzo.h Carte.h
