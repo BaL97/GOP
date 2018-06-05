@@ -25,7 +25,7 @@ protected:
 
 public:
 	Mazzo *mazzo;
-	Player *p;
+	Player *player;
 //constructors:
 	Game();								//costruttore di default
 	Game(int p, bool mo, bool s);		//costruttore con parametri rispettivamente: giocatori, mappa, modalità e  suono.
@@ -34,4 +34,5 @@ public:
 	
 	//Method that creates a list of player (knowing player's number)
 	void createPlayers();
+	void displayPlayer();
 };

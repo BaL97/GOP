@@ -45,9 +45,11 @@ int main(){
 		//Now, creating the data structures for the game
 		//Players
 		//Map
-		cout <<"Bella"; getchar();
-		
 		g = new Game(m.getPlayer_n(),m.getMode() ,m.getSound());
+		g->displayPlayer();
+		getchar();getchar();
+
 	}
+
     }
 }
