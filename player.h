@@ -20,7 +20,8 @@ class Player{
 		//Pointer to cell
 				
 	public:
-		Player *next;
+		Player *next;		//gestore lista giocatori
+		Player *pNext;		//lista di trabocco dei giocatori sulla stessa casella
 		//Constructors
 		Player();
 		Player(string n, int a);

@@ -14,6 +14,7 @@ Player::Player(){
 	this->setName("");
 	this->setAge(0);
 	this->setTurn(-1);
+	this->pNext=NULL;
 	//set here the cell (start)
 }
 
@@ -23,6 +24,7 @@ Player::Player(string n, int a){
 	this->setName(n);
 	this->setAge(a);
 	this->setTurn(0);
+	this->pNext=NULL;
 	//set her the start cell
 }
 
