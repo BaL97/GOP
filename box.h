@@ -26,7 +26,7 @@ public:
 	Player *p;						//Puntatore alla lista di trabocco dei pg
 	Box *prev;						//parametri next prev per la gestione del cammino dei pg sulla mappa
 	Box *next;
-	Carta *c;						//puntatore alla carta da pescare
+	Carte *c;						//puntatore alla carta da pescare
 	
 //constructors
 	Box();							//default constructor
@@ -51,7 +51,7 @@ class Start : public Box{
 
 class End : public Box{
 	End();
-};
+};
 
 class Draw : public Box{
 	Draw();
