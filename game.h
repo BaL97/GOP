@@ -7,6 +7,7 @@
 
 #include "menu.h"
 #include "Mazzo.h"
+#include "player.h"
 
 using namespace std;
 
@@ -23,8 +24,8 @@ protected:
 	*/
 
 public:
-//Mazzo
 	Mazzo *mazzo;
+	Player *p;
 //constructors:
 	Game();								//costruttore di default
 	Game(int p, bool mo, bool s);		//costruttore con parametri rispettivamente: giocatori, mappa, modalità e  suono.

@@ -10,6 +10,7 @@
 
 //Default constructor
 Player::Player(){
+	this->next=NULL;
 	this->setName("");
 	this->setAge(0);
 	this->setTurn(0);
@@ -18,6 +19,7 @@ Player::Player(){
 
 //Constructor with parameters
 Player::Player(string n, int a, int t){
+	this->next=NULL;
 	this->setName(n);
 	this->setAge(a);
 	this->setTurn(t);

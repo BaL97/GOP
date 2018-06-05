@@ -14,6 +14,7 @@ using namespace std;
 
 class Player{
 	private:
+		Player *next; 	//pointer to next player
 		string name;
 		int age;
 		int turn;

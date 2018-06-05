@@ -43,16 +43,11 @@ int main(){
 	if(m.getX()==1){
 		//the static attributes are setted by the user or default
 		//Now, creating the data structures for the game
-		//Mazzo
 		//Players
 		//Map
 		cout <<"Bella"; getchar();
+		
 		g = new Game(m.getPlayer_n(),m.getMode() ,m.getSound());
-		g->mazzo->stampa();
-		getchar();
-        g->mazzo->Mischia();
-        g->mazzo->stampa();
-        getchar();
 	}
     }
 }
