@@ -23,7 +23,7 @@ class Player{
 	public:
 		//Constructors
 		Player();
-		Player(string n, int a, int t);
+		Player(string n, int a);
 
 		//setters methods
 		void setName(string n);

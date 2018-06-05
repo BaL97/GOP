@@ -13,16 +13,16 @@ Player::Player(){
 	this->next=NULL;
 	this->setName("");
 	this->setAge(0);
-	this->setTurn(0);
+	this->setTurn(-1);
 	//set here the cell (start)
 }
 
 //Constructor with parameters
-Player::Player(string n, int a, int t){
+Player::Player(string n, int a){
 	this->next=NULL;
 	this->setName(n);
 	this->setAge(a);
-	this->setTurn(t);
+	this->setTurn(0);
 	//set her the start cell
 }
 

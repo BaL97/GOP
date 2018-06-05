@@ -30,10 +30,8 @@ public:
 	Game();								//costruttore di default
 	Game(int p, bool mo, bool s);		//costruttore con parametri rispettivamente: giocatori, mappa, modalità e  suono.
 
-
-//setter
-
-//getter
 //da implementare set e get degli oggetti da implementare
-
+	
+	//Method that creates a list of player (knowing player's number)
+	void createPlayers();
 };
