@@ -82,13 +82,6 @@
 				p=p->next;
 			}
 		}
-		
-		p=this->init;
-		while(p!=NULL){
-			cout << p->getName()<<" "<<p->graphicBox[0] << p->graphicBox[1] << p->graphicBox[2] << endl;
-			p=p->next;
-		
-		}getchar();
 	}
 
 	int Map::calcNBox(bool mode){

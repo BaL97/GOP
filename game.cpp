@@ -93,3 +93,11 @@
 		tmp=tmp->next; 
 		}
 	}
+
+	void Game::displayMap(){
+		for(int i=0;i<MLENGTH;i++){
+			for(int j=0;j<MLENGTH;j++)
+				cout <<this->graphicMap[i][j];
+			cout <<endl;
+		}
+	}

@@ -8,15 +8,14 @@
 #include "menu.h"
 #include "Mazzo.h"
 #include "map.h"
-
-#define const MLENGTH=40;		//proportioned to MAX MAP SIZE;
+const int MLENGTH =40;
 using namespace std;
 
 
 class Game:public Menu{
 protected:
 	//i parametri di numero giocatori sono ereditati dalla classe madre Menu
-	Box *graphicMap[MLENGTH][MLENGTH];	
+	char graphicMap[MLENGTH][MLENGTH];	
 
 public:
 	Map *map;
@@ -32,5 +31,6 @@ public:
 	void createPlayers();
 	Player* sortInsert(Player *p);
 	void displayPlayers();
-	
+	void parseMap();	//parse the list and update the graphc map
+	void displayMap();
 };

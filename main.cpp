@@ -52,7 +52,7 @@ int main(){
 		getchar();
 		system("clear");
 		g = new Game(x,m.getMode() ,m.getSound());
-
+		g->displayMap();getchar();getchar();
 	}
 
     }
