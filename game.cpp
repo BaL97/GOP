@@ -9,7 +9,7 @@
 const string start_s ="®";
 const string end_s ="©";
 const string empty_s ="○";
-const string busy_s ="◎"; 
+const string busy_s ="●"; 
 	Game::Game():Menu(){									//costruttore di default
 		
 		//i parametri ereditati verranno inizializzati dal costruttore di menu
