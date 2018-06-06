@@ -98,7 +98,7 @@ const string busy_s ="◎";
 	}
 	
 	void Game::stampaa(){
-		cout <<start_s<<end_s<<empty_s<<busy_s<<"lettere";
+		cout <<start_s<<end_s<<empty_s<<busy_s<<empty_s;
 		getchar();
 	}
 
