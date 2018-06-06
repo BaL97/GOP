@@ -30,7 +30,6 @@ void Mazzo::Mischia(){
     int i;
     i = 40;
     Carte *tmp;
-    srand(time(nullptr));
     for (int p=0; p<40; p++){       //algoritmo che "mischia" le carte, generando un intero random che indicherà la posizione
         int k;                      //da scambiare con l'ultimo elemento della lista, che andrà poi a scalare perchè già "scambiato"
         k = rand() % i;
