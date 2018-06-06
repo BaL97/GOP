@@ -42,25 +42,57 @@
 	}
 
 	void Map::generateMap(bool mode){
-		Box *p=this->init;	//create end box as next of init
-		p->next=new End();
-		p=p->next;
-		p->prev=this->init;		//link data structures
+		Box *p;	//create end box as next of init
+		this->end=new End();
+		this->init->next=this->end;
+		this->end->prev=this->init;		//link data structures
 		//calculations of number of boxes and empty boxes (using mode parameter)
 		this->setLength(this->calcNBox(mode));
 		this->setAvg(this->HowEmpty(mode));
 		this->setNEmpty(this->getAvg()*this->getLength()/100);
 		int empty=this->getNEmpty();
-
+		p=this->init;
 		//now generate the middle boxes and connects them into the map
 		for(int i=this->getLength();i>2;i--){
-			cout <<i <<"-";
-			Box *tmp=genBox();
-			cout <<tmp->getId() <<"-" <<tmp->getName() <<endl;
-			if(tmp->getId()==2)	empty--;
+			if(empty==i-2){
+				cout <<"caselle vuote rimanenti: " <<empty <<endl<<endl;
+				getchar();
+				Box *s;
+				p=this->init;
+				for(i;i>2;i--){
+					s=p->next;
+					p->next=new Box();
+					p->next->next=s;
+					s->prev=p->next;
+					p->next->prev=p;
+					p=p->next;
+					empty--;
+				}	
+			}
+			else{
+				Box *tmp=genBox();	//generate the box
+				if(tmp->getId()==2){
+					if(empty!=0)	empty--;
+					else{	//this provide to not insert more empty boxes then Nempty calculated before
+						while(tmp->getId()==2)	tmp=genBox();
+					}
+				}
+				p->next=tmp;
+				tmp->prev=p;
+				tmp->next=this->end;
+				this->end->prev=tmp;
+				p=p->next;
+			}
 		}
-		cout <<endl <<"numero di caselle vuote rimanenti: " <<empty <<endl;	
+		cout <<endl <<"N Caselle: " <<this->getLength() <<"-Empty Box: " <<this->getNEmpty() <<"-Rimangono: "<<empty<<endl;
 		getchar();
+		
+		p=this->init;
+		while(p!=NULL){
+			cout << p->getName() << endl;
+			p=p->next;
+		
+		}getchar();
 	}
 
 	int Map::calcNBox(bool mode){
