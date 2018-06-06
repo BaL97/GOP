@@ -88,7 +88,8 @@
 	Player *tmp;
 	tmp =this->player->next;
 	for(int i=0; i<this->Player_n; i++){
-		cout <<tmp->getName() <<"-" <<tmp->getAge() <<"-" <<tmp->position->getName() <<endl;
+		cout <<tmp->getName() <<"-" <<tmp->getAge() <<"-" <<tmp->position->getName() <<"-" <<tmp->position->next->getName()  <<"-";
+		cout << tmp->position->next->prev->getName() <<endl;
 		tmp=tmp->next; 
 		}
 	}

@@ -11,9 +11,26 @@
 		generateMap(mode); //generate the map(Random)
 	}
 
+	void Map::setLength(int l){
+		this->length=l;
+	}
+
+	int Map::getLength(){
+		return this->length;
+	}
+
 	void Map::generateMap(bool mode){
-		int n=this->calcNBox(mode);
-		int e= this->HowEmpty(mode)*n/100;	
+		Box *p=this->init;	//create end box as next of init
+		p->next=new End();
+		p=p->next;
+		p->prev=this->init;		//link data structures
+		//calculations of number of boxes and empty boxes (using mode parameter)
+		setLength(this->calcNBox(mode));
+		int e= this->HowEmpty(mode)*(this->getLength())/100;
+		for(int n=this->getLength();n>2;n--){
+			cout << n<<endl;
+		}	
+		getchar();
 	}
 
 	int Map::calcNBox(bool mode){

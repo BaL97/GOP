@@ -49,29 +49,36 @@ class Start : public Box{
 };
 
 class End : public Box{
-	End();
+	public:
+		End();
 };
 
 class Draw : public Box{
-	Draw();
+	public:
+		Draw();
 };
 
 class Bridge : public Box{
-	Bridge();
+	public:
+		Bridge();
 };
 
 class Prison : public Box{
-	Prison();
+	public:
+		Prison();
 };
 
 class Inn : public Box{
-	Inn();
+	public:
+		Inn();
 };
 
 class Labirinth : public Box{
-	Labirinth();
+	public:
+		Labirinth();
 };
 
 class Skull : public Box{
-	Skull();
+	public:
+		Skull();
 };
