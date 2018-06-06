@@ -16,8 +16,10 @@
 	}
 
 	int Map::calcNBox(bool mode){
-		if(!mode){	//easy mode -> map length between 49-63
-
+		srand(time(nullptr));	
+		if(!mode){	//easy mode -> map length between 40-63
+			return (rand() % 24 + 40);
 		}
 		else		//hard mode -> map length between 64-90
+			return (rand() % 27 + 64);
 	}

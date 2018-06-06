@@ -5,7 +5,13 @@
 *	Description:	Header file of class Map
 */
 
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<time.h>
 #include "player.h"
+
+using namespace std;
 class Map{
 public:
 	Start *init;		//Start Box (first of the map)
