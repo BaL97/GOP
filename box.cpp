@@ -17,6 +17,9 @@
 		this->prev=NULL;						
 		this->next=NULL;
 		this->c=NULL;						
+		this->graphicBox[0] = '[';
+		this->graphicBox[1] = ' ';
+		this->graphicBox[2] = ']';
 	}												//default constructor
 	Box::Box(string n, string d, int id){			//costruttore con parametri	
 		setName(n);
@@ -24,7 +27,10 @@
 		setId(id);
 		this->prev=NULL;						
 		this->next=NULL;
-		this->c=NULL;						
+		this->c=NULL;		
+		this->graphicBox[0] = '[';
+		this->graphicBox[1] = ' ';
+		this->graphicBox[2] = ']';				
 	}
 //SETTER METHODS
 	void Box::setName(string n){this->name = n;}

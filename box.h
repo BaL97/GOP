@@ -22,6 +22,7 @@ protected:
 	int id;							//intero che identifica il tipo di casella
 	
 public:
+	char graphicBox[3];
 	Box *prev;						//parametri next prev per la gestione del cammino dei pg sulla mappa
 	Box *next;
 	Carte *c;						//puntatore alla carta da pescare

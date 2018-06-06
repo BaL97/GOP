@@ -55,8 +55,6 @@
 		//now generate the middle boxes and connects them into the map
 		for(int i=this->getLength();i>2;i--){
 			if(empty==i-2){
-				cout <<"caselle vuote rimanenti: " <<empty <<endl<<endl;
-				getchar();
 				Box *s;
 				p=this->init;
 				for(i;i>2;i--){
@@ -84,12 +82,10 @@
 				p=p->next;
 			}
 		}
-		cout <<endl <<"N Caselle: " <<this->getLength() <<"-Empty Box: " <<this->getNEmpty() <<"-Rimangono: "<<empty<<endl;
-		getchar();
 		
 		p=this->init;
 		while(p!=NULL){
-			cout << p->getName() << endl;
+			cout << p->getName()<<" "<<p->graphicBox[0] << p->graphicBox[1] << p->graphicBox[2] << endl;
 			p=p->next;
 		
 		}getchar();
