@@ -6,7 +6,6 @@
 */
 
 #include "game.h"
-
 	Game::Game():Menu(){									//costruttore di default
 		
 		//i parametri ereditati verranno inizializzati dal costruttore di menu
@@ -93,6 +92,7 @@
 		tmp=tmp->next; 
 		}
 	}
+	
 
 	void Game::displayMap(){
 		for(int i=0;i<MLENGTH;i++){
