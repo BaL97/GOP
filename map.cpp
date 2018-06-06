@@ -12,7 +12,8 @@
 	}
 
 	void Map::generateMap(bool mode){
-		int n=this->calcNBox(mode);		//calc the number of boxes
+		int n=this->calcNBox(mode);
+		int e= this->HowEmpty(mode)*n/100;	
 	}
 
 	int Map::calcNBox(bool mode){
@@ -22,4 +23,13 @@
 		}
 		else		//hard mode -> map length between 64-90
 			return (rand() % 27 + 64);
+	}
+	
+	int Map::HowEmpty(bool mode){
+		srand(time(nullptr));	
+		if(!mode){		//easy Empty box perc range between 36 and 50%
+			return (rand() % 15 + 36);			
+		}
+		else			//hard Empty box perc range between 20 and 35%
+			return (rand() % 16 + 20);
 	}
