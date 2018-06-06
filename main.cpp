@@ -19,6 +19,7 @@
 using namespace std;
 
 int main(){
+    srand(time(NULL));
     std::string s;
     int x;
     //defining structures needed for the game

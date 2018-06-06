@@ -13,7 +13,7 @@
 	Box::Box(){
 		setName("");
 		setDes("");
-		setId(0);
+		setId(2);
 		this->prev=NULL;						
 		this->next=NULL;
 		this->c=NULL;						
@@ -37,8 +37,8 @@
 	int Box::getId(){return this->id;}
 	
 	//Now defining the constructor of subclasses
-	Start::Start():Box("Start","Casella di partenza",1){}
-	End::End():Box("End","Hai vinto",2){}
+	Start::Start():Box("Start","Casella di partenza",0){}
+	End::End():Box("End","Hai vinto",1){}
 	Draw::Draw():Box("Pesca","Pesca una carta",3){}
 	Bridge::Bridge():Box("Bridge","Sei fortunato, muovi ancora! ;)",4){}
 	Prison::Prison():Box("Prison","Sei finito in prigione, resta fermo tre turni :(",5){}
