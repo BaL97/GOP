@@ -14,7 +14,7 @@
 		setName("");
 		setDes("");
 		setId(0);
-		this->p=NULL;					
+		//this->p=NULL;					
 		this->prev=NULL;						
 		this->next=NULL;
 		this->c=NULL;						
@@ -23,7 +23,7 @@
 		setName(n);
 		setDes(d);
 		setId(id);
-		this->p=NULL;					
+		//this->p=NULL;					
 		this->prev=NULL;						
 		this->next=NULL;
 		this->c=NULL;						

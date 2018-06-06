@@ -5,11 +5,9 @@
 *	Description:	Header file of class Map
 */
 
-#include "box.h"
-
+#include "player.h"
 class Map{
-private:
-	Start *init;		//Start Box
 public:
+	Start *init;		//Start Box (first of the map)
 	Map(bool mode);		//Create the map (Hard/Easy MODE)
 };

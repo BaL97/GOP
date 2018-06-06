@@ -9,6 +9,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "box.h"
 
 using namespace std;
 
@@ -17,14 +18,14 @@ class Player{
 		string name;
 		int age;
 		int turn;
-		//Pointer to cell
 				
 	public:
 		Player *next;		//gestore lista giocatori
 		Player *pNext;		//lista di trabocco dei giocatori sulla stessa casella
+		Box *position;		//current position on map
 		//Constructors
 		Player();
-		Player(string n, int a);
+		Player(string n, int a, Box *p);
 
 		//setters methods
 		void setName(string n);

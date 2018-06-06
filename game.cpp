@@ -52,7 +52,7 @@
 				}
 			}while(a<1);
 
-			tmp=new Player(n,a);	//instances the new player as next of the current
+			tmp=new Player(n,a,(this->map)->init);	//instances the new player as next of the current
 			p=sortInsert(tmp);
 			tmp=NULL;
 			i--;
@@ -61,8 +61,8 @@
 		system("clear");
 	}
 
+
 	Player* Game::sortInsert(Player *p){
-		
 		Player *curr=this->player;
 		Player *prec=curr;
 		bool flag=false;
@@ -88,7 +88,7 @@
 	Player *tmp;
 	tmp =this->player->next;
 	for(int i=0; i<this->Player_n; i++){
-		cout<< tmp->getName()<< " " << tmp->getAge()<<endl;
+		cout <<tmp->getName() <<"-" <<tmp->getAge() <<"-" <<tmp->position->getName() <<endl;
 		tmp=tmp->next; 
 		}
 	}

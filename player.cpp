@@ -8,24 +8,24 @@
 #include "player.h"
 
 
-//Default constructor
-Player::Player(){
+//Default constructor-> only for sentinel element 
+Player::Player(){	
 	this->next=NULL;
 	this->setName("");
 	this->setAge(0);
 	this->setTurn(-1);
 	this->pNext=NULL;
-	//set here the cell (start)
+	this->position=NULL;
 }
 
 //Constructor with parameters
-Player::Player(string n, int a){
+Player::Player(string n, int a, Box *p){
 	this->next=NULL;
 	this->setName(n);
 	this->setAge(a);
 	this->setTurn(0);
 	this->pNext=NULL;
-	//set her the start cell
+	this->position=p;	//set her the start cell
 }
 
 //Setters

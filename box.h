@@ -11,7 +11,6 @@
 #include <cstdlib>
 #include <cstring>
 #include <string>
-#include "player.h"
 #include "Mazzo.h"
 
 using namespace std;
@@ -23,7 +22,7 @@ protected:
 	int id;							//intero che identifica il tipo di casella
 	
 public:
-	Player *p;						//Puntatore alla lista di trabocco dei pg
+	//Player *p;						//Puntatore alla lista di trabocco dei pg
 	Box *prev;						//parametri next prev per la gestione del cammino dei pg sulla mappa
 	Box *next;
 	Carte *c;						//puntatore alla carta da pescare
@@ -46,7 +45,8 @@ public:
 };
 
 class Start : public Box{
-	Start();
+	public:
+		Start();
 };
 
 class End : public Box{
