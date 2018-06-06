@@ -15,7 +15,7 @@ using namespace std;
 class Game:public Menu{
 protected:
 	//i parametri di numero giocatori sono ereditati dalla classe madre Menu
-	char graphicMap[MLENGTH][MLENGTH];	
+	string graphicMap[MLENGTH][MLENGTH];	
 
 public:
 	Map *map;
@@ -32,5 +32,6 @@ public:
 	Player* sortInsert(Player *p);
 	void displayPlayers();
 	void parseMap();	//parse the list and update the graphc map
-	void displayMap();
+	void printMap();
+	void stampaa();
 };

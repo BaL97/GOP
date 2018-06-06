@@ -6,6 +6,10 @@
 */
 
 #include "game.h"
+const string start_s ="®";
+const string end_s ="©";
+const string empty_s ="○";
+const string busy_s ="◎"; 
 	Game::Game():Menu(){									//costruttore di default
 		
 		//i parametri ereditati verranno inizializzati dal costruttore di menu
@@ -93,8 +97,12 @@
 		}
 	}
 	
+	void Game::stampaa(){
+		cout <<start_s<<end_s<<empty_s<<busy_s<<"lettere";
+		getchar();
+	}
 
-	void Game::displayMap(){
+	void Game::printMap(){
 		for(int i=0;i<MLENGTH;i++){
 			for(int j=0;j<MLENGTH;j++)
 				cout <<this->graphicMap[i][j];
