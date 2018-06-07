@@ -30,6 +30,7 @@ const string busy_s ="●";
 		this->player=new Player(); //create the sentinel
 		createPlayers(); //now init the players list
 		
+		this->initMap();
 		this->parseMap();
 
 		//i puntatori degli oggetti da impementare saranno inizializzati a Null
@@ -98,11 +99,6 @@ const string busy_s ="●";
 		}
 	}
 	
-	void Game::stampaa(){
-		cout <<start_s<<end_s<<empty_s<<busy_s<<empty_s;
-		getchar();
-	}
-
 	void Game::printMap(){
 		for(int i=0;i<NLENGTH;i++){
 			for(int j=0;j<MLENGTH;j++)
@@ -123,31 +119,28 @@ const string busy_s ="●";
 		//first row: Map_lenght/4 
 			if(alt){
 				for(j; j<length; j++){ 		//checking if some player is in the box yet
-					if(p->next==NULL)	break;
-					else	{p=p->next;
+					if(p->next!=NULL) p=p->next;
+					else break;
 					this->graphicMap[i][j]=empty_s;
 					//if (p->isBusy()) this->graphicMap[i][j]=busy_s;
 					//else this->graphicMap[i][j]=empty_s;
-					}
 				}
 				if(length!=1) length--;	//if we have element to insert but length is 1 continue one by one
 				i++;
 				j--;				
-				this ->graphicMap[i][j]="|";	//PRINTING LINE SEPARATOR.
+				this->graphicMap[i][j]="|";	//PRINTING LINE SEPARATOR.
 				i++;
-			cout << "Alt";getchar();
 			alt=false;
 			}		//Left to Right Print
 			else{
 				for(int k=0;k<length;k++){
-					if(p->next==NULL)	break;
-					else {
-						p=p->next;
-						this->graphicMap[i][j]=empty_s;
-						//if (p->isBusy()) this->graphicMap[i][j]=busy_s;
-						//else this->graphicMap[i][j]=empty_s;
+					if(p->next!=NULL) p=p->next;
+					else break;
+					this->graphicMap[i][j]=empty_s;
+					//if (p->isBusy()) this->graphicMap[i][j]=busy_s;
+					//else this->graphicMap[i][j]=empty_s;
 						j--;
-					}
+				
 				}
 				if(length!=1) length--;
 				i++;
@@ -155,10 +148,15 @@ const string busy_s ="●";
 				this->graphicMap[i][j]="|";
 				i++;
 			alt=true;
-			cout <<"NO";getchar();
 			}
 		}
 		//now we are in the last element
 		this->graphicMap[i][j]=end_s;	
 		}
-	
+
+	void Game::initMap(){
+		for(int i=0;i<NLENGTH;i++){
+			for(int j=0;j<MLENGTH;j++)
+				this->graphicMap[i][j]="#";
+		}
+	}	
