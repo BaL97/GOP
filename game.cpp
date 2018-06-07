@@ -32,7 +32,8 @@ const string busy_s ="●";
 		
 		this->initMap();
 		this->parseMap();
-
+		this->printMap();
+		cout <<endl<<this->map->getLength();getchar();
 		//i puntatori degli oggetti da impementare saranno inizializzati a Null
 	}
 
@@ -109,23 +110,24 @@ const string busy_s ="●";
 
 	void Game::parseMap(){
 		Box* p = this->map->init;
-		this->graphicMap[0][0]=start_s;
 		int length = this->map->getLength()/4;
 		int i=0;
-		int j=1;
+		int j=0;
 		bool alt = true;		//flag to discriminate the order of insert
 		while(p->next!=NULL){		//END box will be treated differently (as START BOX have been to)
 		//discriminating row lenght
 		//first row: Map_lenght/4 
 			if(alt){
-				for(j; j<length; j++){ 		//checking if some player is in the box yet
-					if(p->next!=NULL) p=p->next;
-					else break;
-					this->graphicMap[i][j]=empty_s;
-					//if (p->isBusy()) this->graphicMap[i][j]=busy_s;
-					//else this->graphicMap[i][j]=empty_s;
+				for(int k=0; k<length; k++){ 		//checking if some player is in the box yet
+					if(p->next!=NULL){ 
+						p=p->next;
+						this->graphicMap[i][j]=empty_s;
+						//if (p->isBusy()) this->graphicMap[i][j]=busy_s;
+						//else this->graphicMap[i][j]=empty_s;
+						j++;
+					}
 				}
-				if(length!=1) length--;	//if we have element to insert but length is 1 continue one by one
+				//if we have element to insert but length is 1 continue one by one
 				i++;
 				j--;				
 				this->graphicMap[i][j]="|";	//PRINTING LINE SEPARATOR.
@@ -134,29 +136,35 @@ const string busy_s ="●";
 			}		//Left to Right Print
 			else{
 				for(int k=0;k<length;k++){
-					if(p->next!=NULL) p=p->next;
-					else break;
-					this->graphicMap[i][j]=empty_s;
-					//if (p->isBusy()) this->graphicMap[i][j]=busy_s;
-					//else this->graphicMap[i][j]=empty_s;
+					if(p->next!=NULL){
+					      	p=p->next;
+						this->graphicMap[i][j]=empty_s;
+						//if (p->isBusy()) this->graphicMap[i][j]=busy_s;
+						//else this->graphicMap[i][j]=empty_s;
 						j--;
-				
+					}
 				}
-				if(length!=1) length--;
 				i++;
 				j++;
 				this->graphicMap[i][j]="|";
 				i++;
 			alt=true;
 			}
+		if(length!=1)	length--;
 		}
 		//now we are in the last element
-		this->graphicMap[i][j]=end_s;	
+		this->graphicMap[i][j]=end_s;
+		i=i+2;
+		this->graphicMap[0][0]=start_s;
+		for(j=0;j<MLENGTH;j++){
+			this->graphicMap[i][j]="#";
 		}
+
+	}
 
 	void Game::initMap(){
 		for(int i=0;i<NLENGTH;i++){
 			for(int j=0;j<MLENGTH;j++)
-				this->graphicMap[i][j]="#";
+				this->graphicMap[i][j]=" ";
 		}
 	}	

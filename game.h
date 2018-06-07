@@ -9,7 +9,7 @@
 #include "Mazzo.h"
 #include "map.h"
 const int MLENGTH =25;
-const int NLENGTH=20;
+const int NLENGTH=15;
 using namespace std;
 
 
