@@ -40,8 +40,8 @@ class Player{
 		//Declare here the get for cells
 
 		//Game Methods
-		//int dice();	//throw the dice
-		//void Turn();	//manage the turn of the current player
+		int dice();	//throw the dice
+		void Turn();	//manage the turn of the current player
 };
 
 

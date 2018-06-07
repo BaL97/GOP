@@ -57,3 +57,11 @@ int Player::getTurn(){
 }
 
 //implements here the get cell method
+
+
+void Player::Turn(){
+	cout<< "E' IL TURNO DI: "<<this->getName()<<endl;
+	getchar();
+	
+
+}

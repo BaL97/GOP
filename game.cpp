@@ -175,3 +175,19 @@ const string busy_s ="●";
 		}
 		return false;
 	}	
+
+	void Game::gameStart(){
+		Player *p = this->player->next;			//saving the first player of the list. . .
+		while (!this->isBusy(this->map->end)){		//continue to iterate while a player reach END BOX
+			if(p->getTurn()==0)
+				p->Turn();
+			else p->setTurn(p->getTurn()-1);	//handle the lock/skip a tourn state
+			p=p->next;
+			if (p->getTurn()==-1) p=p->next;	//handle the sentinel: it will be skipped
+			
+		}	
+		cout<<"BRAVO "<< "HAI VINTO!";
+		cout <<endl<<"PARTITA TERMINATA"<<endl<<"premere un tasto per tornare al menu . . .";
+		getchar();							//handle end game
+		system("clear");	
+	}
