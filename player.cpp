@@ -16,6 +16,7 @@ Player::Player(){
 	this->setTurn(-1);
 	this->pNext=NULL;
 	this->position=NULL;
+	this->setNBox(1);
 }
 
 //Constructor with parameters
@@ -26,6 +27,7 @@ Player::Player(string n, int a, Box *p){
 	this->setTurn(0);
 	this->pNext=NULL;
 	this->position=p;	//set her the start cell
+	this->setNBox(1);
 }
 
 //Setters
@@ -39,6 +41,10 @@ void Player::setAge(int a){
 
 void Player::setTurn(int t){
 	this->turn=t;
+}
+
+void Player::setNBox(int x){
+	this->nBox=x;
 }
 
 //implents here the set cell method
@@ -56,12 +62,50 @@ int Player::getTurn(){
 	return this->turn;
 }
 
+int Player::getNBox(){
+	return this->nBox;
+}
+
 //implements here the get cell method
 
 
 void Player::Turn(){
+	int dado;
 	cout<< "E' IL TURNO DI: "<<this->getName()<<endl;
+	cout << "Premere invio per premere il dado . . .";
 	getchar();
+	dado = this->dice();
+	//incrementi nbox e spostamento puntatore a mappa del pg
+	this->move(dado,false);
+	cout<<"WOW! hai tirato un bel "<<dado<<endl;
+	cout <<"ora "<< this->getName()<<" e' nella casella "<<this->getNBox()<<endl;
+	//this->position->action(this);
 	
+	cout << "FINE DEL TURNO DI " <<this->getName()<<" PREMERE INVIO!";
+	getchar();
+	system("clear");
 
+}
+
+int Player::dice(){
+int x;
+x=rand()% 6 + 1;
+return (x+rand()%7+1);
+}
+
+void Player::move(int x, bool v){	//if v is 0, move straight, else move backward
+//prende un personaggio e sposta il suo puntatore a casella di posizione rispetto al tiro di dadi
+//aggiorna il parametro position e il parametro nBox
+	for(x; x>0; x--){
+		if ((this->position->getId() != 1)&&(!v)){	
+			//muovi avanti solo se non sei in casella finale e v non è true
+			this->position= this->position->next;
+			this->setNBox(this->getNBox()+1);
+		}
+		else{					//sei andato oltre end box. torna indietro
+			this->position=this->position->prev;
+			this->setNBox(this->getNBox()-1);
+			v=true;
+		}
+	}
 }

@@ -18,7 +18,7 @@ class Player{
 		string name;
 		int age;
 		int turn;
-				
+		int nBox;			
 	public:
 		Player *next;		//gestore lista giocatori
 		Player *pNext;		//lista di trabocco dei giocatori sulla stessa casella
@@ -28,20 +28,23 @@ class Player{
 		Player(string n, int a, Box *p);
 
 		//setters methods
+		void setNBox(int x);
 		void setName(string n);
 		void setAge(int n);
 		void setTurn(int n);
 		//declare here the set for cells
 	
 		//Getters methods
+		int getNBox();
 		string getName();
 		int getAge();
 		int getTurn();
 		//Declare here the get for cells
 
 		//Game Methods
-		int dice();	//throw the dice
-		void Turn();	//manage the turn of the current player
+		int dice();		//throw the dice
+		void Turn();		//manage the turn of the current player
+		void move(int x, bool v);	//manage the player movement
 };
 
 
