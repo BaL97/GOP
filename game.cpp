@@ -184,7 +184,9 @@ const string busy_s ="●";
 			this->printMap();
 			if(p->getTurn()==0)
 				p->Turn();
-			else p->setTurn(p->getTurn()-1);	//handle the lock/skip a tourn state
+			else {	cout <<p->getName()<<" Salta il turno";getchar();system("clear");
+				p->setTurn(p->getTurn()-1);}
+				//handle the lock/skip a tourn state
 			winner=p->getName();			//tieni traccia per stampare il vincitore
 			p=p->next;
 			if (p->getTurn()==-1) p=p->next;	//handle the sentinel: it will be skipped

@@ -47,6 +47,9 @@ void Player::setNBox(int x){
 	this->nBox=x;
 }
 
+void Player::setDice(int n){
+	this->d=n;
+}
 //implents here the set cell method
 
 //Getters
@@ -66,25 +69,25 @@ int Player::getNBox(){
 	return this->nBox;
 }
 
+int Player::getDice(){
+	return this->d;
+}
 //implements here the get cell method
 
 
 void Player::Turn(){
-	int dado;
 	cout<< "E' IL TURNO DI: "<<this->getName()<<endl;
 	cout << "Premere invio per premere il dado . . .";
 	getchar();
-	dado = this->dice();
+	this->setDice(this->dice());
 	//incrementi nbox e spostamento puntatore a mappa del pg
-	this->move(dado,false);
-	cout<<"WOW! hai tirato un bel "<<dado<<endl;
+	this->move(this->getDice(),false);
+	cout<<"WOW! hai tirato un bel "<<this->getDice()<<endl;
 	cout <<"ora "<< this->getName()<<" e' nella casella "<<this->getNBox()<<endl;
-	//this->position->action(this);
-	
+	this->action();
 	cout << "FINE DEL TURNO DI " <<this->getName()<<" PREMERE INVIO!";
 	getchar();
 	system("clear");
-
 }
 
 int Player::dice(){
@@ -107,5 +110,32 @@ void Player::move(int x, bool v){	//if v is 0, move straight, else move backward
 			this->setNBox(this->getNBox()-1);
 			v=true;
 		}
+	}
+}
+
+//now implements the action method for each subclass
+void Player::action(){
+	this->position->display();
+	switch(this->position->getId()){
+		case 3:	//Draw Box
+			break;		
+		case 4:	//Bridge Box
+			//Call movement to the player
+			this->move(this->getDice(),false);
+			break;
+		case 5:	//Prison Box
+			this->setTurn(3);
+			break;
+		case 6:	//Inn Box
+			this->setTurn(1);
+			break;
+		case 7:	//Labirinth Box+
+			this->move(this->getDice(),true);
+			break;
+		case 8:	//Skull Box
+			this->move(this->getNBox()-1,true);
+			break;
+		default:
+			break;
 	}
 }

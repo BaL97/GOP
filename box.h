@@ -30,8 +30,6 @@ public:
 	Box();							//default constructor
 	Box(string n, string d, int id);			//costruttore con parametri
 	
-	void action();						//interfaccia del metodo che verrà implementato nelle sottoclassi
-
 //SETTER METHODS
 	void setName(string n);
 	void setDes(string n);
@@ -41,6 +39,8 @@ public:
 	string getName();
 	string getDes();
 	int getId();
+
+	void display();
 };
 
 class Start : public Box{

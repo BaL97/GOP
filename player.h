@@ -18,7 +18,8 @@ class Player{
 		string name;
 		int age;
 		int turn;
-		int nBox;			
+		int nBox;
+		int d;			//save the last dice throw		
 	public:
 		Player *next;		//gestore lista giocatori
 		Player *pNext;		//lista di trabocco dei giocatori sulla stessa casella
@@ -32,6 +33,7 @@ class Player{
 		void setName(string n);
 		void setAge(int n);
 		void setTurn(int n);
+		void setDice(int n);
 		//declare here the set for cells
 	
 		//Getters methods
@@ -39,12 +41,14 @@ class Player{
 		string getName();
 		int getAge();
 		int getTurn();
+		int getDice();
 		//Declare here the get for cells
 
 		//Game Methods
 		int dice();		//throw the dice
 		void Turn();		//manage the turn of the current player
 		void move(int x, bool v);	//manage the player movement
+		void action();
 };
 
 
