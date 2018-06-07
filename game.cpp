@@ -31,8 +31,7 @@ const string busy_s ="●";
 		createPlayers(); //now init the players list
 		
 		this->initMap();
-		this->parseMap();
-		this->printMap();getchar();
+		//this->parseMap();
 		//i puntatori degli oggetti da impementare saranno inizializzati a Null
 	}
 
@@ -190,7 +189,6 @@ const string busy_s ="●";
 			winner=p->getName();			//tieni traccia per stampare il vincitore
 			p=p->next;
 			if (p->getTurn()==-1) p=p->next;	//handle the sentinel: it will be skipped
-			cout <<"MAP LENGTH--->" <<  this->map->getLength()<<endl;
 		}	
 		cout<<"BRAVO -"<<winner << "- HAI VINTO!";
 		cout <<endl<<"PARTITA TERMINATA"<<endl<<"premere un tasto per tornare al menu . . .";
