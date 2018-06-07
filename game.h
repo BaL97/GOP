@@ -8,14 +8,15 @@
 #include "menu.h"
 #include "Mazzo.h"
 #include "map.h"
-const int MLENGTH =40;
+const int MLENGTH =25;
+const int NLENGTH=20;
 using namespace std;
 
 
 class Game:public Menu{
 protected:
 	//i parametri di numero giocatori sono ereditati dalla classe madre Menu
-	string graphicMap[MLENGTH][MLENGTH];	
+	string graphicMap[MLENGTH][NLENGTH];	
 
 public:
 	Map *map;
