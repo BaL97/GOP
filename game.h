@@ -35,4 +35,5 @@ public:
 	void parseMap();	//parse the list and update the graphc map
 	void printMap();
 	void initMap();		//initialize the matrix with empty strings
+	bool isBusy(Box *b);
 };
