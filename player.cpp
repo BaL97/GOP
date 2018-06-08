@@ -109,6 +109,7 @@ void Player::move(int x, bool v){	//if v is 0, move straight, else move backward
 			this->setNBox(this->getNBox()-1);
 			v=true;
 		}
+	//gestire limite di move back a start
 	}
 }
 
@@ -121,6 +122,7 @@ void Player::action(Mazzo *m){
 			//cout <<m->getSegnalino();getchar();
 			c=m->Pesca();
 			c.messaggio();
+			this->handleCard(c);
 			break;		
 		case 4:	//Bridge Box
 			//Call movement to the player
@@ -139,6 +141,39 @@ void Player::action(Mazzo *m){
 			this->move(this->getNBox()-1,true);
 			break;
 		default:
+			break;
+	}
+}
+
+void Player::handleCard(Carte c){
+	string s="";
+	switch(c.getId()){
+		case 0:	//empty card
+			break;
+		case 1:	//move card
+			this->move(1,false);	//move straight of 1 box
+			break;
+		case 2: //Blocked Card
+			this->setTurn(1);	//block for 1 turn
+			break;
+		case 3: //Throw straight
+			cout <<"premere invio per tirare i dadi . . .";
+			getchar();
+			this->setDice(this->dice());
+			cout <<"WOW! hai tirato un bel " <<this->getDice()<<endl;
+			this->move(this->getDice(),false);	//throw dice and move straight
+			break;
+		case 4: //throw back
+			cout <<"premere invio per tirare i dadi . . .";
+			getchar();
+			this->setDice(this->dice());
+			cout <<"WOW! hai tirato un bel "<<this->getDice()<<endl;
+			this->move(this->getDice(),true);	//throw dice and move backward
+			break;
+		case 5:	//back to start a player
+			Player *app=this->next;
+			if(app->getAge()==0)	app=app->next;	//skipping the sentinel
+			app->move(app->getNBox()-1,true);		//next player goes to start box
 			break;
 	}
 }

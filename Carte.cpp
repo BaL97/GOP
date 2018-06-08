@@ -63,8 +63,8 @@ Carta_Tira_Indietro::Carta_Tira_Indietro(){
     setId(4);
 }
 
-Carta_Start::Carta_Start() {
+Carta_Start::Carta_Start() {//porta un giocatore al punto di partenza
         setName("Tanto va la gatta al lardo");
-          setDescription("che torna al punto di partenza!");
+          setDescription("che porta il giocatore succesivo al punto di partenza!");
           setId(5);
       }
