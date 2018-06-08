@@ -42,9 +42,9 @@ void Mazzo::Mischia(){
     for (int p=0; p<40; p++){       //algoritmo che "mischia" le carte, generando un intero random che indicherà la posizione
         int k;                      //da scambiare con l'ultimo elemento della lista, che andrà poi a scalare perchè già "scambiato"
         k = rand() % i;
-            tmp = CartaMazzoEasy[k];
-            CartaMazzoEasy[k] = CartaMazzoEasy[i-1];
-            CartaMazzoEasy[i] = tmp;
+            tmp = this->CartaMazzoEasy[k];
+            this->CartaMazzoEasy[k] = this->CartaMazzoEasy[i-1];
+            this->CartaMazzoEasy[i] = tmp;
         i--;                        //decremento dell' indice dell'ultima posizione
     }
 this->setSegnalino(0);
