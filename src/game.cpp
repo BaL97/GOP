@@ -204,7 +204,7 @@ const string busy_s ="●";
 	cout << "-------------------------"<<endl;
 	for (int i = this->Player_n; i>0; i-- ){
 	cout << k->getName() << " - " << k->getNBox()<< " - "<<k->position->getName();
-		if(p->getName()==k->getName()) cout <<" * "; 
+		if(p==k) cout <<" * "; 
 		cout<<endl;
 		k=k->next;
 		}
