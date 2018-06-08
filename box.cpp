@@ -11,8 +11,8 @@
 
 //constructors
 	Box::Box(){
-		setName("0");
-		setDes("0");
+		setName(" ");
+		setDes(" ");
 		setId(2);
 		this->prev=NULL;						
 		this->next=NULL;

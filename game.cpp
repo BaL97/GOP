@@ -28,7 +28,7 @@ const string busy_s ="●";
 		
 		//Now create Players List -> OK
 		this->player=new Player(); //create the sentinel
-		createPlayers(); //now init the players list
+		this->createPlayers(); //now init the players list
 		
 		this->initMap();
 		//this->parseMap();
@@ -43,6 +43,7 @@ const string busy_s ="●";
 		Player *tmp=NULL;
 		Player *p=NULL;
 		int i=this->Player_n;		//save the tmp player number
+		cout <<"DATI GIOCATORI"<<endl;
 		do{
 			cout <<"Nome: ";	//get the parameters
 			getline(cin,n);
