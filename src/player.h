@@ -49,7 +49,7 @@ class Player{
 		void Turn(Mazzo *m);		//manage the turn of the current player
 		void move(int x, bool v);	//manage the player movement
 		void action(Mazzo *m);
-		void handleCard(Carte c);
+		void handleCard(Carte c, Mazzo *m);
 };
 
 

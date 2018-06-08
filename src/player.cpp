@@ -74,6 +74,8 @@ int Player::getDice(){
 
 
 void Player::Turn(Mazzo *m){
+	Box *b=this->position;		//saving tmp the initial position before the turn (for handling labirinth)
+	int i=this->getNBox();		//saving initial nbox (handling labirinth)
 	cout<< "E' IL TURNO DI: "<<this->getName()<<endl;
 	cout << "Premere invio per premere il dado . . .";
 	getchar();
@@ -82,6 +84,10 @@ void Player::Turn(Mazzo *m){
 	this->move(this->getDice(),false);
 	cout<<"WOW! hai tirato un bel "<<this->getDice()<<endl;
 	this->action(m);
+	if(this->position->getId()==7)	{
+		this->position=b;	//restore intial position and nBox if player is in labirinth
+		this->setNBox(i);
+	}
 	cout << "FINE DEL TURNO DI " <<this->getName()<<" PREMERE INVIO!";
 	getchar();
 	system("clear");
@@ -120,11 +126,12 @@ void Player::action(Mazzo *m){
 			//cout <<m->getSegnalino();getchar();
 			c=m->Pesca();
 			c.messaggio();
-			this->handleCard(c);
+			this->handleCard(c,m);
 			break;		
 		case 4:	//Bridge Box
 			//Call movement to the player
 			this->move(this->getDice(),false);
+			this->action(m);		//itera l'azione alla casella in cui si trova adesso
 			break;
 		case 5:	//Prison Box
 			this->setTurn(3);
@@ -133,7 +140,7 @@ void Player::action(Mazzo *m){
 			this->setTurn(1);
 			break;
 		case 7:	//Labirinth Box+
-			this->move(this->getDice(),true);
+			//handled in turn
 			break;
 		case 8:	//Skull Box
 			this->move(this->getNBox()-1,true);
@@ -143,13 +150,14 @@ void Player::action(Mazzo *m){
 	}
 }
 
-void Player::handleCard(Carte c){
+void Player::handleCard(Carte c, Mazzo *m){
 	string s="";
 	switch(c.getId()){
 		case 0:	//empty card
 			break;
 		case 1:	//move card
 			this->move(1,false);	//move straight of 1 box
+			this->action(m);
 			break;
 		case 2: //Blocked Card
 			this->setTurn(1);	//block for 1 turn
@@ -160,6 +168,7 @@ void Player::handleCard(Carte c){
 			this->setDice(this->dice());
 			cout <<"WOW! hai tirato un bel " <<this->getDice()<<endl;
 			this->move(this->getDice(),false);	//throw dice and move straight
+			this->action(m);
 			break;
 		case 4: //throw back
 			cout <<"premere invio per tirare i dadi . . .";
@@ -167,6 +176,7 @@ void Player::handleCard(Carte c){
 			this->setDice(this->dice());
 			cout <<"WOW! hai tirato un bel "<<this->getDice()<<endl;
 			this->move(this->getDice(),true);	//throw dice and move backward
+			this->action(m);
 			break;
 		case 5:	//back to start a player
 			Player *app=this->next;
