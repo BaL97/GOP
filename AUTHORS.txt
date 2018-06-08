@@ -1,5 +1,0 @@
-Name:                   Email:                                      Matricola:
-
-Davide Balestra         davide.balestra2@studio.unibo.it
-Andrea D'Arpa           
-Matteo Celani
