@@ -83,7 +83,6 @@ void Player::Turn(){
 	//incrementi nbox e spostamento puntatore a mappa del pg
 	this->move(this->getDice(),false);
 	cout<<"WOW! hai tirato un bel "<<this->getDice()<<endl;
-	cout <<"ora "<< this->getName()<<" e' nella casella "<<this->getNBox()<<endl;
 	this->action();
 	cout << "FINE DEL TURNO DI " <<this->getName()<<" PREMERE INVIO!";
 	getchar();
@@ -93,7 +92,7 @@ void Player::Turn(){
 int Player::dice(){
 int x;
 x=rand()% 6 + 1;
-return (x+rand()%7+1);
+return (x+rand()%6+1);
 }
 
 void Player::move(int x, bool v){	//if v is 0, move straight, else move backward

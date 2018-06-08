@@ -92,7 +92,7 @@ void Menu::choice(){
 						system("clear");
 						cout <<"Grazie per aver Giocato a GOP, alla prossima" <<endl;
 						cout <<"Premere un tasto per continuare . . .";
-						getchar();
+						getchar();system("clear");
 						exit(1);
 						break;
 					case 2:
