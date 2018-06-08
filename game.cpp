@@ -181,6 +181,8 @@ const string busy_s ="●";
 		while (!this->isBusy(this->map->end)){		//continue to iterate while a player reach END BOX
 			this->parseMap();
 			this->printMap();
+			this->prntLog(p);
+						
 			if(p->getTurn()==0)
 				p->Turn();
 			else {	cout <<p->getName()<<" Salta il turno";getchar();system("clear");
@@ -189,9 +191,22 @@ const string busy_s ="●";
 			winner=p->getName();			//tieni traccia per stampare il vincitore
 			p=p->next;
 			if (p->getTurn()==-1) p=p->next;	//handle the sentinel: it will be skipped
-		}	
+	}	
 		cout<<"BRAVO -"<<winner << "- HAI VINTO!";
 		cout <<endl<<"PARTITA TERMINATA"<<endl<<"premere un tasto per tornare al menu . . .";
 		getchar();							//handle end game
 		system("clear");	
+	}
+
+	void Game::prntLog(Player *p){
+	Player *k;
+	k=this->player->next;
+	cout << "-------------------------"<<endl;
+	for (int i = this->Player_n; i>0; i-- ){
+	cout << k->getName() << " - " << k->getNBox()<< " - "<<k->position->getName();
+		if(p->getName()==k->getName()) cout <<" * "; 
+		cout<<endl;
+		k=k->next;
+		}
+	cout<<"-------------------------"<<endl;
 	}

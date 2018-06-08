@@ -37,4 +37,5 @@ public:
 	void initMap();		//initialize the matrix with empty strings
 	bool isBusy(Box *b);
 	void gameStart();
+	void prntLog(Player *p);
 };
