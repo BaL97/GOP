@@ -32,5 +32,5 @@ menu.o: menu.cpp menu.h
 	@echo Menu - done
 
 clean:
-	rm *.o GOP
+	rm *.o *.h.gch GOP
 	@echo Removed All!

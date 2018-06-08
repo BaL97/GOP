@@ -1,8 +1,8 @@
 /*GAME.H
 *header della classe Game. Qui verra' implementata la partita.
 *	AUTHORS:
-*	Andrea D'Arpa				0000
-* 	Davide Balestra				0000
+*	Andrea D'Arpa				
+* 	Davide Balestra				
 */
 
 #include "menu.h"

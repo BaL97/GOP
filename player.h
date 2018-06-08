@@ -1,6 +1,6 @@
-/* Authors:	Davide Balestra	0000789078
- *		Andrea D'Arpa	0000803520
- *		Matteo Celani	0000000000
+/* Authors:	Davide Balestra	
+ *		Andrea D'Arpa	
+ *		Matteo Celani	
  *
  * Date: 05-06-2018
  * Description: Header file of class Player

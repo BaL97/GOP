@@ -1,5 +1,5 @@
-/*	Authors: Davide Balestra 0000789078
- *           Andrea D'Arpa   0000803520
+/*	Authors: Davide Balestra 
+ *           Andrea D'Arpa   
  *	Date: 09-05-2018
  *	Implementation of class menu
  */

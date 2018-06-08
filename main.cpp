@@ -1,5 +1,6 @@
-/* Authors:	Davide Balestra: 0000789078
- * 		    Andrea D'Arpa:	 0000803520
+/* Authors:	Davide Balestra: 
+ * 		Andrea D'Arpa:	 
+ * 		Matteo Celani
  * Main file of GOP Project, include the main menu and the access of Game's functions
  */
 #ifndef GOP_DEF
