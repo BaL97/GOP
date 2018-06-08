@@ -23,7 +23,6 @@ class Player{
 		int d;			//save the last dice throw		
 	public:
 		Player *next;		//gestore lista giocatori
-		Player *pNext;		//lista di trabocco dei giocatori sulla stessa casella
 		Box *position;		//current position on map
 		//Constructors
 		Player();

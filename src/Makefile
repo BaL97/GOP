@@ -1,5 +1,6 @@
 output: main.cpp menu.o game.o Carte.o Mazzo.o player.o box.o map.o
-	g++ main.cpp menu.o game.o Carte.o Mazzo.o player.o box.o map.o -o GOP
+	g++ main.cpp menu.o game.o Carte.o Mazzo.o player.o box.o map.o -o ../GOP
+	rm *.o *.h.gch
 	@echo Main - Done
 	@echo Everything Done!
 
@@ -32,5 +33,5 @@ menu.o: menu.cpp menu.h
 	@echo Menu - done
 
 clean:
-	rm *.o *.h.gch GOP
+	rm ../GOP
 	@echo Removed All!
