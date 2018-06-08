@@ -93,11 +93,11 @@
 	}
 	
 	int Map::HowEmpty(bool mode){
-		if(!mode){		//easy Empty box perc range between 36 and 50%
-			return (rand() % 15 + 36);			
+		if(!mode){		//easy Empty box perc range between 51 and 65%
+			return (rand() % 15 + 51);			
 		}
-		else			//hard Empty box perc range between 20 and 35%
-			return (rand() % 16 + 20);
+		else			//hard Empty box perc range between 35 and 50%
+			return (rand() % 16 + 35);
 	}
 
 	Box* Map::genBox(){
