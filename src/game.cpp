@@ -16,7 +16,7 @@ const string busy_s ="●";
 		
 		//i puntatori degli oggetti da impementare saranno inizializzati a Null
 	}
-	Game::Game(int p, bool mo, bool s):Menu(p, mo, s){		//costruttore con parametri rispettivamente: giocatori, mappa, modalità e  suono.
+	Game::Game(int p, bool mo):Menu(p, mo){		//costruttore con parametri rispettivamente: giocatori, mappa e modalità.
 		//i parametri ereditati verranno inizializzati dal costruttore di menu
 		
 		//Create the map Now

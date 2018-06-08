@@ -17,7 +17,6 @@ class Menu{
 protected:
     int x;
     int Player_n;       	//Number of players (>1)
-    bool Sound;        	 	//Active sound
     bool Mode;          	//difficulty parameter false = EASY || true = HARD
     ifstream file_in;		//stream for input file
     char parser;		//string for parsing files
@@ -31,18 +30,16 @@ public:
      * Mode = false;
      */
      Menu();
-     Menu(int pn, bool s, bool mo);
+     Menu(int pn, bool mo);
     
     //set methods
     void setX(int x);
     void setPlayer_n(int n);
-    void setSound(bool n);
     void setMode(bool n);
     
     //get methods
     int getX();
     int getPlayer_n();
-    bool getSound();
     bool getMode();
     void displayAll();
     

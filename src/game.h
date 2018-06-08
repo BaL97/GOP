@@ -24,7 +24,7 @@ public:
 	Player *player;
 //constructors:
 	Game();								//costruttore di default
-	Game(int p, bool mo, bool s);		//costruttore con parametri rispettivamente: giocatori, mappa, modalità e  suono.
+	Game(int p, bool mo);		//costruttore con parametri rispettivamente: giocatori, mappa e modalità.
 
 //da implementare set e get degli oggetti da implementare
 	
