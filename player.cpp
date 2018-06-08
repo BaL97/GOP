@@ -104,7 +104,7 @@ void Player::move(int x, bool v){	//if v is 0, move straight, else move backward
 			this->position= this->position->next;
 			this->setNBox(this->getNBox()+1);
 		}
-		else{					//sei andato oltre end box. torna indietro
+		else if (this->position->prev!=NULL){					//sei andato oltre end box. torna indietro, solo se, Manage the back movement if we are in start  
 			this->position=this->position->prev;
 			this->setNBox(this->getNBox()-1);
 			v=true;
