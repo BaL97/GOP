@@ -10,6 +10,7 @@
 #include <cstdlib>
 #include <cstring>
 #include "box.h"
+#include "Mazzo.h"
 
 using namespace std;
 
@@ -46,9 +47,9 @@ class Player{
 
 		//Game Methods
 		int dice();		//throw the dice
-		void Turn();		//manage the turn of the current player
+		void Turn(Mazzo *m);		//manage the turn of the current player
 		void move(int x, bool v);	//manage the player movement
-		void action();
+		void action(Mazzo *m);
 };
 
 

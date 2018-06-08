@@ -25,7 +25,6 @@ const string busy_s ="●";
 		//Now create Mazzo -> OK!
 		this->mazzo = new Mazzo();
 		this->mazzo->Mischia();
-		
 		//Now create Players List -> OK
 		this->player=new Player(); //create the sentinel
 		this->createPlayers(); //now init the players list
@@ -185,7 +184,7 @@ const string busy_s ="●";
 			this->prntLog(p);
 						
 			if(p->getTurn()==0)
-				p->Turn();
+				p->Turn(this->mazzo);
 			else {	cout <<p->getName()<<" Salta il turno";getchar();system("clear");
 				p->setTurn(p->getTurn()-1);}
 				//handle the lock/skip a tourn state

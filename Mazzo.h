@@ -20,7 +20,7 @@ public:
     Mazzo(); //costruttore di default
 
     //getters & setters
-    int setSegnalino(int i); 
+    void setSegnalino(int i); 
     int getSegnalino();
    
 //funzioni di gestione del mazzo

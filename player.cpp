@@ -66,7 +66,7 @@ int Player::getTurn(){
 }
 
 int Player::getNBox(){
-	return this->nBox;
+	return this->nBox;	
 }
 
 int Player::getDice(){
@@ -75,7 +75,7 @@ int Player::getDice(){
 //implements here the get cell method
 
 
-void Player::Turn(){
+void Player::Turn(Mazzo *m){
 	cout<< "E' IL TURNO DI: "<<this->getName()<<endl;
 	cout << "Premere invio per premere il dado . . .";
 	getchar();
@@ -83,7 +83,7 @@ void Player::Turn(){
 	//incrementi nbox e spostamento puntatore a mappa del pg
 	this->move(this->getDice(),false);
 	cout<<"WOW! hai tirato un bel "<<this->getDice()<<endl;
-	this->action();
+	this->action(m);
 	cout << "FINE DEL TURNO DI " <<this->getName()<<" PREMERE INVIO!";
 	getchar();
 	system("clear");
@@ -113,10 +113,14 @@ void Player::move(int x, bool v){	//if v is 0, move straight, else move backward
 }
 
 //now implements the action method for each subclass
-void Player::action(){
+void Player::action(Mazzo *m){
+	Carte c;
 	this->position->display();
 	switch(this->position->getId()){
 		case 3:	//Draw Box
+			//cout <<m->getSegnalino();getchar();
+			c=m->Pesca();
+			c.messaggio();
 			break;		
 		case 4:	//Bridge Box
 			//Call movement to the player
