@@ -56,6 +56,12 @@ void Menu::displayAll(){
 
 void Menu::display(){
 	system("clear");
+	cout<<"  ___   ____   ___"<<endl;
+	cout<<" |  _| |    | |   | "<<endl;
+	cout<<" | |_  |    | | |)|"<<endl;
+	cout<<" | | | |    | |  / "<<endl;
+	cout<<" |___| |____| |_|    "<<endl<<endl;
+
 	cout <<"Menu" <<endl;
 	cout <<" Nuova partita		(1)" <<endl;
 	cout <<" Opzioni		(2)" <<endl;
