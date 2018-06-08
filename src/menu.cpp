@@ -178,13 +178,13 @@ void Menu::setOptions(){
         
             case 3:
 		system("clear");
-		this->parseFile("RULES.txt");
+		this->parseFile("../RULES.txt");
 		system("clear");
 		break;
         
             case 4:
 		system("clear");
-		this->parseFile("AUTHORS.txt");
+		this->parseFile("../AUTHORS.txt");
 		system("clear");
 		break;
         
