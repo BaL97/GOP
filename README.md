@@ -18,9 +18,9 @@ ENJOY YOUR GAME!
 ------------------------------------------------------------------------------------------------------------------------------
 You will find all project information in our documentation file.
 
-                                                                                                    Andrea D'Arpa
-                                                                                                    Davide Balestra
-                                                                                                    Matteo Celani
+                                                                                           Andrea D'Arpa
+                                                                                           Davide Balestra
+                                                                                           Matteo Celani
                                                                                                     
                                                                                                    
                                                                                                   
