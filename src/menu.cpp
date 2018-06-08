@@ -11,7 +11,6 @@
 Menu::Menu(){
     setX(5);
     setPlayer_n(2);
-    setSound(true);
     setMode(false);
 }
 

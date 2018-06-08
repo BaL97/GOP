@@ -52,7 +52,7 @@ int main(){
 		cout <<"La partita e' stata avviata, buon divertimento!" <<endl <<"Premere un tasto per continuare . . .";
 		getchar();
 		system("clear");
-		g = new Game(x,m.getMode() ,m.getSound());
+		g = new Game(x,m.getMode());
 		g->gameStart();
 	}
 
