@@ -50,10 +50,15 @@ void Mazzo::Mischia(){
 this->setSegnalino(0);
 }
 
-
 Carte Mazzo::Pesca(){
 	//segnalino ++;                          //contatore che tiene conto della carta pescata e della prossima carta da pescare
-   	 return *CartaMazzoEasy[segnalino++];
+   	if (segnalino <= 39 )
+	 return *CartaMazzoEasy[segnalino++];
+	else {
+		this->Mischia();
+		this->setSegnalino(0);
+		return *CartaMazzoEasy[segnalino++];
+	} 
 }
 
 void Mazzo::stampa(){
