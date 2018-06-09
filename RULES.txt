@@ -9,7 +9,7 @@ ci saranno delle caselle con effetti particolari da tenere d'occhio.
 	BRIDGE 		ripete il movimento del turno
 	INN    		fermo 1 turno
 	PRISION 	fermo 3 turni
-	LABIRINTH 	torna indietro alla casella in cui hai iniziato il turno
+	LABIRINTH 	torna indietro del tuo ultimo tiro di dadi
 	SKULL    	torna alla casella START
 	END		HAI VINTO IL GIOCO!
 
