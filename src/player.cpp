@@ -74,8 +74,6 @@ int Player::getDice(){
 
 
 void Player::Turn(Mazzo *m){
-	Box *b=this->position;		//saving tmp the initial position before the turn (for handling labirinth)
-	int i=this->getNBox();		//saving initial nbox (handling labirinth)
 	cout<< "E' IL TURNO DI: "<<this->getName()<<endl;
 	cout << "Premere invio per premere il dado . . .";
 	getchar();
@@ -84,10 +82,6 @@ void Player::Turn(Mazzo *m){
 	this->move(this->getDice(),false);
 	cout<<"WOW! hai tirato un bel "<<this->getDice()<<endl;
 	this->action(m);
-	if(this->position->getId()==7)	{
-		this->position=b;	//restore intial position and nBox if player is in labirinth
-		this->setNBox(i);
-	}
 	cout << "FINE DEL TURNO DI " <<this->getName()<<" PREMERE INVIO!";
 	getchar();
 	system("clear");
@@ -140,7 +134,7 @@ void Player::action(Mazzo *m){
 			this->setTurn(1);
 			break;
 		case 7:	//Labirinth Box+
-			//handled in turn
+			this->move(this->getDice(),true);
 			break;
 		case 8:	//Skull Box
 			this->move(this->getNBox()-1,true);
