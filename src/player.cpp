@@ -113,6 +113,7 @@ void Player::move(int x, bool v){	//if v is 0, move straight, else move backward
 
 //now implements the action method for each subclass
 void Player::action(Mazzo *m){
+	Box *curr=this->position;	//saving position before action
 	Carte c;
 	this->position->display();
 	switch(this->position->getId()){
@@ -121,11 +122,14 @@ void Player::action(Mazzo *m){
 			c=m->Pesca();
 			c.messaggio();
 			this->handleCard(c,m);
+			if(curr!=this->position)	//iterate the action only if arrives in a different box
+				this->action(m);
 			break;		
 		case 4:	//Bridge Box
 			//Call movement to the player
 			this->move(this->getDice(),false);
-			this->action(m);		//itera l'azione alla casella in cui si trova adesso
+			if(curr!=this->position)	//iterate the action only if arrives in a different box
+				this->action(m);		//itera l'azione alla casella in cui si trova adesso
 			break;
 		case 5:	//Prison Box
 			this->setTurn(3);
@@ -135,6 +139,8 @@ void Player::action(Mazzo *m){
 			break;
 		case 7:	//Labirinth Box+
 			this->move(this->getDice(),true);
+			if(curr!=this->position)	//iterate the action only if on a different box
+				this->action(m);
 			break;
 		case 8:	//Skull Box
 			this->move(this->getNBox()-1,true);
@@ -151,7 +157,6 @@ void Player::handleCard(Carte c, Mazzo *m){
 			break;
 		case 1:	//move card
 			this->move(1,false);	//move straight of 1 box
-			this->action(m);
 			break;
 		case 2: //Blocked Card
 			this->setTurn(1);	//block for 1 turn
@@ -162,7 +167,6 @@ void Player::handleCard(Carte c, Mazzo *m){
 			this->setDice(this->dice());
 			cout <<"WOW! hai tirato un bel " <<this->getDice()<<endl;
 			this->move(this->getDice(),false);	//throw dice and move straight
-			this->action(m);
 			break;
 		case 4: //throw back
 			cout <<"premere invio per tirare i dadi . . .";
@@ -170,7 +174,6 @@ void Player::handleCard(Carte c, Mazzo *m){
 			this->setDice(this->dice());
 			cout <<"WOW! hai tirato un bel "<<this->getDice()<<endl;
 			this->move(this->getDice(),true);	//throw dice and move backward
-			this->action(m);
 			break;
 		case 5:	//back to start a player
 			Player *app=this->next;
