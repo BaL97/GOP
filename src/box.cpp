@@ -46,7 +46,7 @@
 	Bridge::Bridge():Box("Bridge","Sei fortunato, raddoppia il tuo tiro ;)",4){}
 	Prison::Prison():Box("Prison","Sei finito in prigione, resta fermo tre turni :(",5){}
 	Inn::Inn():Box("Inn","Ti fermi a prendere una birra in locanda, stai fermo per un turno",6){}
-	Labirinth::Labirinth():Box("Labirinth","Sei perso nel labirinto, torna da dove sei venuto: ",7){}
+	Labirinth::Labirinth():Box("Labirinth","Sei perso nel labirinto, torna indietro del tuo ultimo tiro di dadi",7){}
 	Skull::Skull():Box("Skull","Che paura, un TESKIOOOHHHH! Fuggi tornando all'inizio",8){}
 
 
