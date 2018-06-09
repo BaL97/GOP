@@ -178,7 +178,9 @@ void Player::handleCard(Carte c, Mazzo *m){
 		case 5:	//back to start a player
 			Player *app=this->next;
 			if(app->getAge()==0)	app=app->next;	//skipping the sentinel
-			app->move(app->getNBox()-1,true);		//next player goes to start box
+			if(app->getTurn()==0)	//moving player only if is unblocked
+				app->move(app->getNBox()-1,true);		//next player goes to start box
+			else cout<<app->getName() <<" e' in prigione. Non puo' essere spostato";
 			break;
 	}
 }
