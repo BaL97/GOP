@@ -32,6 +32,7 @@ int main(){
     //The menu will continues to show up until the user will choice to exit the game (q)
     
     while(true){
+	system("clear");
 	m.display();
         //the input is made parsing a string to an integer so we can handle input errors
         //not valid string (not numbers) will not be accepted
