@@ -122,14 +122,10 @@ void Player::action(Mazzo *m){
 			c=m->Pesca();
 			c.messaggio();
 			this->handleCard(c,m);
-			if(curr!=this->position)	//iterate the action only if arrives in a different box
-				this->action(m);
 			break;		
 		case 4:	//Bridge Box
 			//Call movement to the player
 			this->move(this->getDice(),false);
-			if(curr!=this->position)	//iterate the action only if arrives in a different box
-				this->action(m);		//itera l'azione alla casella in cui si trova adesso
 			break;
 		case 5:	//Prison Box
 			this->setTurn(3);
@@ -139,8 +135,6 @@ void Player::action(Mazzo *m){
 			break;
 		case 7:	//Labirinth Box+
 			this->move(this->getDice(),true);
-			if(curr!=this->position)	//iterate the action only if on a different box
-				this->action(m);
 			break;
 		case 8:	//Skull Box
 			this->move(this->getNBox()-1,true);
@@ -148,6 +142,9 @@ void Player::action(Mazzo *m){
 		default:
 			break;
 	}
+	cout <<"premere un tasto per continuare . . .";getchar();
+	if(curr!=this->position)
+		this->action(m);	//iterate the action only if on a different box
 }
 
 void Player::handleCard(Carte c, Mazzo *m){
