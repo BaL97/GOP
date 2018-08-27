@@ -2,4 +2,4 @@ Name:                   Email:
 
 Davide Balestra         davide.balestra2@studio.unibo.it
 Andrea D'Arpa           andrea.darpa@studio.unibo.it
-Matteo Celani		matteo.celano@studio.unibo.it
+Matteo Celani		matteo.celani@studio.unibo.it
